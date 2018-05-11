@@ -2,8 +2,9 @@ package de.hska.lkit.demo.redis.repo.impl;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -20,6 +21,8 @@ import org.springframework.data.redis.support.atomic.RedisAtomicLong;
 import org.springframework.stereotype.Repository;
 
 import de.hska.lkit.demo.redis.model.User;
+import de.hska.lkit.demo.redis.model.Post;
+import de.hska.lkit.demo.redis.model.Token;
 import de.hska.lkit.demo.redis.repo.UserRepository;
 
 /**
@@ -34,23 +37,30 @@ import de.hska.lkit.demo.redis.repo.UserRepository;
 public class UserRepositoryImpl implements UserRepository {
 
 	/**
-	 * 
+	 *
 	 */
-	private static final String KEY_SET_ALL_USERNAMES 	= "all:usernames";
+	private static final String KEY_SET_ALL_USERNAMES = "all:usernames";
 
-	private static final String KEY_ZSET_ALL_USERNAMES 	= "all:usernames:sorted";
-	
-	private static final String KEY_HASH_ALL_USERS 		= "all:user";
-	
-	private static final String KEY_PREFIX_USER 	= "user:";
+	private static final String KEY_SET_ALL_TOKENS = "all:tokens";
+
+	private static final String KEY_SET_ALL_POSTS = "all:posts";
+
+	private static final String KEY_ZSET_ALL_USERNAMES = "all:usernames:sorted";
+
+	private static final String KEY_HASH_ALL_USERS = "all:user";
+
+	private static final String KEY_HASH_ALL_POSTS = "all:post";
+
+	private static final String KEY_PREFIX_USER = "user:";
+
+	private static final String KEY_PREFIX_POST = "post:";
 
 	/**
 	 * to generate unique ids for user
 	 */
 	private RedisAtomicLong userid;
-	
-	
 
+	private RedisAtomicLong postid;
 	/**
 	 * to save data in String format
 	 */
@@ -60,8 +70,7 @@ public class UserRepositoryImpl implements UserRepository {
 	 * to save user data as object
 	 */
 	private RedisTemplate<String, Object> redisTemplate;
-	
-	
+
 
 	/**
 	 * hash operations for stringRedisTemplate
@@ -72,23 +81,30 @@ public class UserRepositoryImpl implements UserRepository {
 	 * set operations for stringRedisTemplate
 	 */
 	private SetOperations<String, String> srt_setOps;
-	
+
 	/**
 	 * zset operations for stringRedisTemplate
 	 */
 	private ZSetOperations<String, String> srt_zSetOps;
-	
-	
+
 
 	/**
 	 * hash operations for redisTemplate
 	 */
-	@Resource(name="redisTemplate")
+	@Resource(name = "redisTemplate")
 	private HashOperations<String, String, User> rt_hashOps;
-	
-	
-	/* 
-	 * 
+
+	/**
+	 * hash operations for redisTemplate
+	 */
+	@Resource(name = "redisTemplate")
+	private HashOperations<String, String, Post> rt_hashOps_post;
+
+
+
+
+	/*
+	 *
 	 */
 	@Autowired
 	public UserRepositoryImpl(RedisTemplate<String, Object> redisTemplate, StringRedisTemplate stringRedisTemplate) {
@@ -97,7 +113,7 @@ public class UserRepositoryImpl implements UserRepository {
 		this.userid = new RedisAtomicLong("userid", stringRedisTemplate.getConnectionFactory());
 	}
 
-	
+
 	@PostConstruct
 	private void init() {
 		srt_hashOps = stringRedisTemplate.opsForHash();
@@ -105,10 +121,10 @@ public class UserRepositoryImpl implements UserRepository {
 		srt_zSetOps = stringRedisTemplate.opsForZSet();
 	}
 
-	
+
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * hska.iwi.vslab.repo.UserRepository#saveUser(hska.iwi.vslab.model.User)
 	 */
@@ -130,7 +146,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 		// the key for a new user is added to the set for all usernames
 		srt_setOps.add(KEY_SET_ALL_USERNAMES, user.getUsername());
-		
+
 		// the key for a new user is added to the sorted set for all usernames
 		srt_zSetOps.add(KEY_ZSET_ALL_USERNAMES, user.getUsername(), 0);
 
@@ -144,14 +160,14 @@ public class UserRepositoryImpl implements UserRepository {
 		return rt_hashOps.entries(KEY_HASH_ALL_USERS);
 	}
 
-	
+
 	@Override
 	public User getUser(String username) {
 		User user = new User();
 
 		// if username is in set for all usernames, 
 		if (srt_setOps.isMember(KEY_SET_ALL_USERNAMES, username)) {
-			
+
 			// get the user data out of the hash object with key "'user:' + username"
 			String key = "user:" + username;
 			user.setId(srt_hashOps.get(key, "id"));
@@ -173,31 +189,106 @@ public class UserRepositoryImpl implements UserRepository {
 		Set<byte[]> result = null;
 		Map<String, User> mapResult = new HashMap<String, User>();
 
-		if (pattern.equals("")){
-			
+		if (pattern.equals("")) {
+
 			// get all user
 			mapResult = rt_hashOps.entries(KEY_HASH_ALL_USERS);
-	
+
 		} else {
 			// search for user with pattern
-			
+
 			char[] chars = pattern.toCharArray();
 			chars[pattern.length() - 1] = (char) (chars[pattern.length() - 1] + 1);
 			String searchto = new String(chars);
 
-			Set <String> sresult = srt_zSetOps.rangeByLex(KEY_ZSET_ALL_USERNAMES, Range.range().gte(pattern).lt(searchto));
-			for (Iterator iterator = sresult.iterator(); iterator.hasNext();) {
+			Set<String> sresult = srt_zSetOps.rangeByLex(KEY_ZSET_ALL_USERNAMES, Range.range().gte(pattern).lt(searchto));
+			for (Iterator iterator = sresult.iterator(); iterator.hasNext(); ) {
 				String username = (String) iterator.next();
-				System.out.println("key found: "+ username);
+				System.out.println("key found: " + username);
 				User user = (User) rt_hashOps.get(KEY_HASH_ALL_USERS, KEY_PREFIX_USER + username);
-	
+
 				mapResult.put(user.getUsername(), user);
 			}
 
 		}
-		
+
 		return mapResult;
 
 	}
-		
+
+	@Override
+	public boolean logInUser(String username, String password) {
+		User user = getUser(username);
+		if (user == null) return false;
+		return user.getPassword() == password;
+	}
+
+	@Override
+	public boolean checkIfUserIsLoggedIn(User user, int ip) {
+		// if the ip is in set for all tokens return true
+		if (srt_setOps.isMember(KEY_SET_ALL_USERNAMES, String.valueOf(ip)))
+			return true;
+
+		return false;
+	}
+
+	@Override
+	public Map<String, Post> getAllPosts() {
+		return rt_hashOps_post.entries(KEY_HASH_ALL_POSTS);
+	}
+
+	/**
+	 *
+	 * Gets you all posts of the wanted users
+	 *
+	 * @param userList
+	 * @return
+	 */
+	public List<Post> getListOfPostsFromUsers(ArrayList<User> userList) {
+		ArrayList<Post> list = new ArrayList<Post>(getAllPosts().values());
+
+		if (userList == null || userList.isEmpty()) return list;
+
+		ArrayList<Post> resultList = new ArrayList<Post>();
+
+		for (Post post : list) {
+			for (User user : userList) {
+				if (post.getUserId() == user.getId()) {
+					resultList.add(post);
+				}
+			}
+		}
+
+		return resultList;
+	}
+
+	@Override
+	public void writePost(User user, String text) {
+		//checkIfUserIsLoggedIn(user, ip);
+
+		String id = String.valueOf(postid.incrementAndGet());
+
+		String key = KEY_PREFIX_POST + "number" + id;
+		srt_hashOps.put(key, "id", id);
+		srt_hashOps.put(key, "userId", user.getId());
+		srt_hashOps.put(key, "text", text);
+		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
+		String formattedString = LocalDate.now().format(formatter);
+		srt_hashOps.put(key, "date", formattedString);
+
+		// the key for a new user is added to the set for all usernames
+		srt_setOps.add(KEY_SET_ALL_POSTS, user.getUsername());
+
+
+		Post post = new Post();
+		post.setId(id);
+		post.setUserId(user.getId());
+		post.setText(text);
+		post.setDate(formattedString);
+		// to show how objects can be saved
+		rt_hashOps_post.put(KEY_HASH_ALL_POSTS, key, post);
+
+
+	}
+
 }
