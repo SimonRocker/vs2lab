@@ -262,9 +262,8 @@ public class UserRepositoryImpl implements UserRepository {
 	@Override
 	public boolean checkIfUserIsLoggedIn(User user, int ip) {
 		// if the ip is in set for all tokens return true
-		if (srt_setOps.isMember(KEY_SET_ALL_USERNAMES, String.valueOf(ip)))
-			return getToken(ip) != null;
-
+		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, String.valueOf(ip)))
+			return getToken(ip) != null && getToken(ip).getUserId() == user.getId();
 		return false;
 	}
 
