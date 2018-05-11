@@ -50,7 +50,7 @@ public interface UserRepository {
 	 * @param user
 	 * @return boolean, if the login was correct
 	 */
-	public boolean logInUser(String username, String password);
+	public boolean logInUser(String username, String password, int ip);
 
 
 	/**
@@ -78,6 +78,6 @@ public interface UserRepository {
 	 * @param user
 	 * @param text
 	 */
-	public void writePost(User user, String text);
+	public void writePost(Post post);
 
 }

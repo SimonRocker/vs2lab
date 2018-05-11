@@ -39,7 +39,7 @@ public class Post implements Serializable {
     }
 
     public String getText() {
-        return getText();
+        return text;
     }
 
     public void setText(String text) {

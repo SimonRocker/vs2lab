@@ -51,9 +51,13 @@ public class UserRepositoryImpl implements UserRepository {
 
 	private static final String KEY_HASH_ALL_POSTS = "all:post";
 
+	private static final String KEY_HASH_ALL_TOKEN = "all:token";
+
 	private static final String KEY_PREFIX_USER = "user:";
 
 	private static final String KEY_PREFIX_POST = "post:";
+
+	private static final String KEY_PREFIX_TOKEN = "token:";
 
 	/**
 	 * to generate unique ids for user
@@ -61,6 +65,8 @@ public class UserRepositoryImpl implements UserRepository {
 	private RedisAtomicLong userid;
 
 	private RedisAtomicLong postid;
+
+	private RedisAtomicLong tokenid;
 	/**
 	 * to save data in String format
 	 */
@@ -100,7 +106,14 @@ public class UserRepositoryImpl implements UserRepository {
 	@Resource(name = "redisTemplate")
 	private HashOperations<String, String, Post> rt_hashOps_post;
 
+	/**
+	 * hash operations for redisTemplate
+	 */
+	@Resource(name = "redisTemplate")
+	private HashOperations<String, String, Token> rt_hashOps_token;
 
+	private User currentUser;
+	private int currentIp;
 
 
 	/*
@@ -111,6 +124,8 @@ public class UserRepositoryImpl implements UserRepository {
 		this.redisTemplate = redisTemplate;
 		this.stringRedisTemplate = stringRedisTemplate;
 		this.userid = new RedisAtomicLong("userid", stringRedisTemplate.getConnectionFactory());
+		this.postid = new RedisAtomicLong("postid", stringRedisTemplate.getConnectionFactory());
+		this.tokenid = new RedisAtomicLong("tokenid", stringRedisTemplate.getConnectionFactory());
 	}
 
 
@@ -180,6 +195,23 @@ public class UserRepositoryImpl implements UserRepository {
 		return user;
 	}
 
+	public Token getToken(int ip) {
+		Token token = new Token();
+
+		// if ip is in set for all tokens,
+		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, ip)) {
+
+			// get the user data out of the hash object with key "'token:' + ip"
+			String key = "post:" + ip;
+			token.setId(srt_hashOps.get(key, "id"));
+			token.setIp(srt_hashOps.get(key, "ip"));
+			token.setToDate(srt_hashOps.get(key, "toDate"));
+			token.setUserId(srt_hashOps.get(key, "userId"));
+		} else
+			token = null;
+		return token;
+	}
+
 
 	@Override
 	public Map<String, User> findUsersWith(String pattern) {
@@ -217,17 +249,21 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	@Override
-	public boolean logInUser(String username, String password) {
+	public boolean logInUser(String username, String password, int ip) {
 		User user = getUser(username);
 		if (user == null) return false;
-		return user.getPassword() == password;
+		if (user.getPassword() == password) {
+			addToken(ip);
+			currentUser = user;
+			return true;
+		} else {return false;}
 	}
 
 	@Override
 	public boolean checkIfUserIsLoggedIn(User user, int ip) {
 		// if the ip is in set for all tokens return true
 		if (srt_setOps.isMember(KEY_SET_ALL_USERNAMES, String.valueOf(ip)))
-			return true;
+			return getToken(ip) != null;
 
 		return false;
 	}
@@ -263,30 +299,59 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	@Override
-	public void writePost(User user, String text) {
-		//checkIfUserIsLoggedIn(user, ip);
+	public void writePost(Post post) {
+		//checkIfUserIsLoggedIn(currentUser, currentIp);
+		//checkIfUserIsLoggedIn(currentUser, currentIp);
 
+		logInUser("Me", "test1234", 127001);
 		String id = String.valueOf(postid.incrementAndGet());
 
 		String key = KEY_PREFIX_POST + "number" + id;
 		srt_hashOps.put(key, "id", id);
-		srt_hashOps.put(key, "userId", user.getId());
-		srt_hashOps.put(key, "text", text);
+		srt_hashOps.put(key, "userId", "Me");
+		srt_hashOps.put(key, "text", post.getText());
 		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
 		String formattedString = LocalDate.now().format(formatter);
 		srt_hashOps.put(key, "date", formattedString);
 
 		// the key for a new user is added to the set for all usernames
-		srt_setOps.add(KEY_SET_ALL_POSTS, user.getUsername());
+		srt_setOps.add(KEY_SET_ALL_POSTS, key);
 
 
-		Post post = new Post();
-		post.setId(id);
-		post.setUserId(user.getId());
-		post.setText(text);
-		post.setDate(formattedString);
+		Post postCopy = new Post();
+		postCopy.setId(id);
+		postCopy.setUserId("Me");
+		postCopy.setText(post.getText());
+		postCopy.setDate(formattedString);
 		// to show how objects can be saved
-		rt_hashOps_post.put(KEY_HASH_ALL_POSTS, key, post);
+		rt_hashOps_post.put(KEY_HASH_ALL_POSTS, key, postCopy);
+
+
+	}
+
+	public void addToken(int ip) {
+		logInUser("Me", "test1234", 127001);
+		String id = String.valueOf(tokenid.incrementAndGet());
+
+		String key = KEY_PREFIX_TOKEN + "number" + id;
+		srt_hashOps.put(key, "ip", String.valueOf(ip));
+		srt_hashOps.put(key, "id", String.valueOf(id));
+		srt_hashOps.put(key, "userId", "Me");
+		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
+		String formattedString = LocalDate.now().plusWeeks(1).format(formatter);
+		srt_hashOps.put(key, "toDate", formattedString);
+
+		// the key for a new user is added to the set for all usernames
+		srt_setOps.add(KEY_SET_ALL_TOKENS, key);
+
+
+		Token token = new Token();
+		token.setId(id);
+		token.setIp(String.valueOf(ip));
+		token.setUserId("Me");
+		token.setToDate(formattedString);
+		// to show how objects can be saved
+		rt_hashOps_token.put(KEY_HASH_ALL_TOKEN, key, token);
 
 
 	}
