@@ -34,6 +34,28 @@
 			</tbody>
 		</table>
 
+		<h3>all Posts</h3>
+
+		<table class="table">
+			<thead>
+			<tr>
+				<th>postId</th>
+				<th>userId</th>
+				<th>date</th>
+				<th>text</th>
+			</tr>
+			</thead>
+
+			<tbody>
+			<tr th:each="element : ${posts}">
+				<td th:text="${element.key}">key</td>
+				<td th:text="${element.value.userId}">Some name</td>
+				<td th:text="${element.value.date}">Some name</td>
+				<td th:text="${element.value.text}">Some name</td>
+			</tr>
+			</tbody>
+		</table>
+
 	</div>
 </body>
 </html>

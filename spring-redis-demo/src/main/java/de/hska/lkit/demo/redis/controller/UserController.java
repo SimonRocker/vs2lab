@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import de.hska.lkit.demo.redis.model.User;
+import de.hska.lkit.demo.redis.model.*;
 import de.hska.lkit.demo.redis.repo.UserRepository;
 
 /**
@@ -39,6 +39,7 @@ public class UserController {
 	public String getAllUsers(Model model) {
 		Map<String, User> retrievedUsers = userRepository.getAllUsers();
 		model.addAttribute("users", retrievedUsers);
+		model.addAttribute("posts", userRepository.getAllPosts());
 
 		return "users";
 	}
@@ -88,7 +89,37 @@ public class UserController {
 		model.addAttribute("users", retrievedUsers);
 		return "users";
 	}
-	
+
+	/**
+	 * redirect to page to add a new post
+	 *
+	 * @return
+	 */
+	@RequestMapping(value = "/addPost", method = RequestMethod.GET)
+	public String addPost(@ModelAttribute Post post) {
+		return "newPost";
+	}
+
+	/**
+	 * add a new post, adds a list of all posts to model
+	 *
+	 * @param post
+	 *            Post object filled in form
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/addPost", method = RequestMethod.POST)
+	public String writePost(@ModelAttribute Post post, Model model) {
+
+		userRepository.writePost(post);
+		model.addAttribute("message", "Post successfully added");
+
+		Map<String, Post> retrievedPost = userRepository.getAllPosts();
+
+		model.addAttribute("users", userRepository.getAllUsers());
+		model.addAttribute("posts", retrievedPost);
+		return "users";
+	}
 	
 	/**
 	 * search usernames containing the sequence of characters
