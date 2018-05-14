@@ -1,0 +1,237 @@
+html, body
+{
+    height: 100%;
+}
+
+.top{
+    background-color: #1a75ff;
+    color: white;
+    text-align: center;
+    height: 100px;
+    line-height: 90px;
+    position: sticky;
+    top: 0;
+}
+.profileMiddle{
+    background-color: #e6f0ff;
+    border-radius: 15px;
+    margin-top: 50px;
+}
+.side{
+    height: 1000px;
+    text-align: center;
+    position: sticky;
+    background-color: #e6f0ff;
+    position: sticky;
+    top: 100px;
+}
+
+.profileSide{
+    height: 1000px;
+    text-align: center;
+    position: sticky;
+}
+.left{
+
+}
+.right{
+
+}
+
+.outer{
+    margin-top: -20px;
+    margin-left:  200px;
+    margin-right:  200px;
+    height: 300px;
+}
+
+.row{
+    margin: 0px !important;
+}
+
+h1{
+    margin-bottom: 0 !important;
+}
+
+h3{
+    font-size: 20px;
+    color: white!important;
+    background-color: #1a75ff;;
+    border-radius: 25px;
+}
+
+.author{
+    font-size: 20px;
+    float: left;
+    margin-left: 10px;
+    color: #4d94ff;
+}
+
+.post{
+    padding-bottom: 50px;
+    border-bottom: 1px solid black;
+}
+
+.profilePic{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin-top: 10px;
+}
+
+.profilePicSmall{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    float: left;
+}
+
+.profilePicBig{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.profileName{
+    float: left;
+    font-size: 30px;
+    margin: 0;
+    margin-left: 50px;
+    margin-top: 2px;
+}
+.postHeader{
+    height: 70px;
+}
+
+.date{
+    float: right;
+    color: #1a75ff;;
+}
+
+.content{
+    font-size: 15px;
+}
+
+.followingList{
+    list-style-type: none;
+    padding: 0;
+}
+
+.following{
+    height: 45px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+
+.person{
+    margin-top: 5px;
+    margin-left: 10px;
+    float: left;
+    color: #4d4d4d;
+    font-weight: bold;
+}
+
+.dot{
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-top: 10px;
+}
+
+.logo{
+    height:80px;
+    width:80px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.icon{
+    height: 50px;
+    margin-top: 25px;
+    margin-right: 50px;
+    float: right;
+}
+
+.socialIcon{
+    height: 30px;
+    margin-top: 60px;
+    margin-left: 30px;
+    float: left;
+}
+
+.profileIcon{
+    opacity: 0.8;
+}
+featherIcon{
+    opacity: 0.8;
+}
+
+.rider{
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: #1a75ff;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid white;
+    padding-top: 10px;
+}
+
+.riderLeft{
+    float: left;
+}
+.riderRight{
+    float: right;
+
+}
+.riderMiddle{
+    float: left;
+    margin-left: 31%;
+}
+
+.wrapper{
+    height: 50px;
+}
+
+.blogList{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+}
+
+.blogPost{
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 15px;
+}
+
+.blogPostDate{
+    font-size: 15px;
+    color: #1a75ff;
+}
+.blogPostContent{
+    font-size: 20px;
+
+
+}
+
+.deleteIcon {
+    height: 20px;
+    width: 20px;
+    float: right;
+    margin-right: -30px;
+}
