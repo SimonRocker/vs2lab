@@ -121,7 +121,6 @@ public class UserRepositoryImpl implements UserRepository {
 	private HashOperations<String, String, Follower_Relation> rt_hashOps_follower_relation;
 
 	private User currentUser;
-	private int currentIp;
 
 
 	/*
@@ -207,7 +206,7 @@ public class UserRepositoryImpl implements UserRepository {
 		return user;
 	}
 
-	public Token getToken(int ip) {
+	public Token getToken(String ip) {
 		Token token = new Token();
 
 		// if ip is in set for all tokens,
@@ -261,7 +260,7 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	@Override
-	public boolean logInUser(String username, String password, int ip) {
+	public boolean logInUser(String username, String password, String ip) {
 		User user = getUser(username);
 		if (user == null) return false;
 		if (user.getPassword() == password) {
@@ -272,10 +271,13 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	@Override
-	public boolean checkIfUserIsLoggedIn(User user, int ip) {
-		// if the ip is in set for all tokens return true
-		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, String.valueOf(ip)))
-			return getToken(ip) != null && getToken(ip).getUserId() == user.getId();
+	public boolean checkIfUserIsLoggedIn(String ip) {
+		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, ip)) {
+			DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
+			String formattedString = LocalDate.now().format(formatter);
+			return getToken(ip) != null && currentUser != null && getToken(ip).getUserId().equals(currentUser.getId())
+					&& Integer.parseInt(getToken(ip).getToDate()) <= Integer.parseInt(formattedString);
+		}
 		return false;
 	}
 
@@ -311,8 +313,6 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@Override
 	public void writePost(Post post) {
-		//checkIfUserIsLoggedIn(currentUser, currentIp);
-		//checkIfUserIsLoggedIn(currentUser, currentIp);
 		String id = String.valueOf(postid.incrementAndGet());
 
 		String key = KEY_PREFIX_POST + "number" + id;
@@ -338,12 +338,12 @@ public class UserRepositoryImpl implements UserRepository {
 
 	}
 
-	public void addToken(int ip) {
+	public void addToken(String ip) {
 		String id = String.valueOf(tokenid.incrementAndGet());
 
 		String key = KEY_PREFIX_TOKEN + "number" + id;
-		srt_hashOps.put(key, "ip", String.valueOf(ip));
-		srt_hashOps.put(key, "id", String.valueOf(id));
+		srt_hashOps.put(key, "ip", ip);
+		srt_hashOps.put(key, "id", id);
 		srt_hashOps.put(key, "userId", "Me");
 		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
 		String formattedString = LocalDate.now().plusWeeks(1).format(formatter);
@@ -355,7 +355,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 		Token token = new Token();
 		token.setId(id);
-		token.setIp(String.valueOf(ip));
+		token.setIp(ip);
 		token.setUserId("Me");
 		token.setToDate(formattedString);
 		// to show how objects can be saved

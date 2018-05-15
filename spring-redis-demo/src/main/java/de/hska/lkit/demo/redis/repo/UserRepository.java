@@ -48,7 +48,7 @@ public interface UserRepository {
 	 * @param user
 	 * @return boolean, if the login was correct
 	 */
-	public boolean logInUser(String username, String password, int ip);
+	public boolean logInUser(String username, String password, String ip);
 
 
 	/**
@@ -59,7 +59,7 @@ public interface UserRepository {
 	 * @param ip
 	 * @return true, if logged in
 	 */
-	public boolean checkIfUserIsLoggedIn(User user, int ip);
+	public boolean checkIfUserIsLoggedIn(String ip);
 
 	/**
 	 *

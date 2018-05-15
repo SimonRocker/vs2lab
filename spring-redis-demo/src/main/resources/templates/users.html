@@ -47,30 +47,8 @@
 			</ul>
 
 		</div>
-
+		
 		<div class="col-md-3 side right"></div>
-
-		<h3>all Tokens</h3>
-
-		<table class="table">
-			<thead>
-			<tr>
-				<th>id</th>
-				<th>userId</th>
-				<th>ip</th>
-				<th>toDate</th>
-			</tr>
-			</thead>
-
-			<tbody>
-			<tr th:each="element : ${tokens}">
-				<td th:text="${element.id}">key</td>
-				<td th:text="${element.value.userId}">Some name</td>
-				<td th:text="${element.value.ip}">Some name</td>
-				<td th:text="${element.value.toDate}">Some name</td>
-			</tr>
-			</tbody>
-		</table>
 
 	</div>
 </div>
