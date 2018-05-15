@@ -1,4 +1,4 @@
-package de.hska.lkit.demo.redis.controller;
+package de.hska.lkit.demo.redis.model;
 
 public class Greeting {
 

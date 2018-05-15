@@ -1,5 +1,6 @@
 package de.hska.lkit.demo.redis.controller;
 
+import de.hska.lkit.demo.redis.model.Greeting;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
