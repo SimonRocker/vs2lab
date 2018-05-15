@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d93268cf-3225-42d3-87b9-e08066182e20" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/logInUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/logInUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-redis-demo/target/" />
@@ -23,14 +22,8 @@
         <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="415">
-              <caret line="179" column="40" lean-forward="true" selection-start-line="179" selection-start-column="40" selection-end-line="179" selection-end-column="40" />
+              <caret line="198" column="40" lean-forward="true" selection-start-line="198" selection-start-column="40" selection-end-line="198" selection-end-column="40" />
               <folding>
-                <element signature="e#2206#2207#0" expanded="true" />
-                <element signature="e#2229#2230#0" expanded="true" />
-                <element signature="e#2932#2933#0" expanded="true" />
-                <element signature="e#2955#2956#0" expanded="true" />
-                <element signature="e#3087#3088#0" expanded="true" />
-                <element signature="e#3112#3113#0" expanded="true" />
                 <element signature="e#4595#4596#0" expanded="true" />
                 <element signature="e#4615#4616#0" expanded="true" />
               </folding>
@@ -56,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="84" column="60" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
+            <state relative-caret-position="952">
+              <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -71,13 +64,6 @@
             <state relative-caret-position="331">
               <caret line="368" lean-forward="true" selection-start-line="368" selection-end-line="368" />
               <folding>
-                <element signature="e#5158#5159#0" expanded="true" />
-                <element signature="e#5210#5211#0" expanded="true" />
-                <element signature="e#6529#6543#0" expanded="true" />
-                <element signature="e#7918#7919#0" expanded="true" />
-                <element signature="e#7975#7976#0" expanded="true" />
-                <element signature="e#8180#8186#0" expanded="true" />
-                <element signature="e#8317#8323#0" expanded="true" />
                 <element signature="e#11490#11491#0" expanded="true" />
                 <element signature="e#11548#11549#0" expanded="true" />
               </folding>
@@ -85,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+            <state relative-caret-position="51">
+              <caret line="30" column="67" lean-forward="true" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -147,10 +133,10 @@
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java" />
       </list>
     </option>
   </component>
@@ -411,12 +397,12 @@
       <workItem from="1526221991655" duration="1788000" />
       <workItem from="1526228386481" duration="6284000" />
       <workItem from="1526284452084" duration="2173000" />
-      <workItem from="1526381367380" duration="12874000" />
+      <workItem from="1526381367380" duration="13187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47642000" />
+    <option name="totallyTimeSpent" value="47955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -486,12 +472,6 @@
         <state relative-caret-position="1173">
           <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
-            <element signature="e#2206#2207#0" expanded="true" />
-            <element signature="e#2229#2230#0" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2955#2956#0" expanded="true" />
-            <element signature="e#3087#3088#0" expanded="true" />
-            <element signature="e#3112#3113#0" expanded="true" />
             <element signature="e#4595#4596#0" expanded="true" />
             <element signature="e#4615#4616#0" expanded="true" />
           </folding>
@@ -559,12 +539,6 @@
         <state relative-caret-position="1173">
           <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
-            <element signature="e#2206#2207#0" expanded="true" />
-            <element signature="e#2229#2230#0" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2955#2956#0" expanded="true" />
-            <element signature="e#3087#3088#0" expanded="true" />
-            <element signature="e#3112#3113#0" expanded="true" />
             <element signature="e#4595#4596#0" expanded="true" />
             <element signature="e#4615#4616#0" expanded="true" />
           </folding>
@@ -625,12 +599,6 @@
         <state relative-caret-position="1173">
           <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
-            <element signature="e#2206#2207#0" expanded="true" />
-            <element signature="e#2229#2230#0" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2955#2956#0" expanded="true" />
-            <element signature="e#3087#3088#0" expanded="true" />
-            <element signature="e#3112#3113#0" expanded="true" />
             <element signature="e#4595#4596#0" expanded="true" />
             <element signature="e#4615#4616#0" expanded="true" />
           </folding>
@@ -691,12 +659,6 @@
         <state relative-caret-position="1768">
           <caret line="119" column="51" selection-start-line="119" selection-start-column="51" selection-end-line="119" selection-end-column="51" />
           <folding>
-            <element signature="e#2206#2207#0" expanded="true" />
-            <element signature="e#2229#2230#0" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2955#2956#0" expanded="true" />
-            <element signature="e#3087#3088#0" expanded="true" />
-            <element signature="e#3112#3113#0" expanded="true" />
             <element signature="e#4595#4596#0" expanded="true" />
             <element signature="e#4615#4616#0" expanded="true" />
           </folding>
@@ -804,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="84" column="60" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
@@ -842,14 +797,8 @@
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
-          <caret line="179" column="40" lean-forward="true" selection-start-line="179" selection-start-column="40" selection-end-line="179" selection-end-column="40" />
+          <caret line="198" column="40" lean-forward="true" selection-start-line="198" selection-start-column="40" selection-end-line="198" selection-end-column="40" />
           <folding>
-            <element signature="e#2206#2207#0" expanded="true" />
-            <element signature="e#2229#2230#0" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2955#2956#0" expanded="true" />
-            <element signature="e#3087#3088#0" expanded="true" />
-            <element signature="e#3112#3113#0" expanded="true" />
             <element signature="e#4595#4596#0" expanded="true" />
             <element signature="e#4615#4616#0" expanded="true" />
           </folding>
@@ -861,13 +810,6 @@
         <state relative-caret-position="331">
           <caret line="368" lean-forward="true" selection-start-line="368" selection-end-line="368" />
           <folding>
-            <element signature="e#5158#5159#0" expanded="true" />
-            <element signature="e#5210#5211#0" expanded="true" />
-            <element signature="e#6529#6543#0" expanded="true" />
-            <element signature="e#7918#7919#0" expanded="true" />
-            <element signature="e#7975#7976#0" expanded="true" />
-            <element signature="e#8180#8186#0" expanded="true" />
-            <element signature="e#8317#8323#0" expanded="true" />
             <element signature="e#11490#11491#0" expanded="true" />
             <element signature="e#11548#11549#0" expanded="true" />
           </folding>
@@ -883,8 +825,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+        <state relative-caret-position="51">
+          <caret line="30" column="67" lean-forward="true" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
         </state>
       </provider>
     </entry>
