@@ -6,7 +6,7 @@ public class Post implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String id;
-    private String userId;
+    private String username;
     private String date;
     private String text;
 
@@ -22,12 +22,12 @@ public class Post implements Serializable {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getDate() {

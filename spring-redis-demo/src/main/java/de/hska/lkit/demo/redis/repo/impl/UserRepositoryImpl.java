@@ -210,10 +210,10 @@ public class UserRepositoryImpl implements UserRepository {
 		Token token = new Token();
 
 		// if ip is in set for all tokens,
-		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, ip)) {
+		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, "number" + ip)) {
 
 			// get the user data out of the hash object with key "'token:' + ip"
-			String key = "post:" + ip;
+			String key = KEY_PREFIX_TOKEN + "number" + ip;
 			token.setId(srt_hashOps.get(key, "id"));
 			token.setIp(srt_hashOps.get(key, "ip"));
 			token.setToDate(srt_hashOps.get(key, "toDate"));
@@ -263,18 +263,20 @@ public class UserRepositoryImpl implements UserRepository {
 	public boolean logInUser(String username, String password, String ip) {
 		User user = getUser(username);
 		if (user == null) return false;
-		if (user.getPassword() == password) {
-			addToken(ip);
+		if (user.getPassword().equals(password)) {
 			currentUser = user;
+			addToken(ip);
 			return true;
 		} else {return false;}
 	}
 
 	@Override
 	public boolean checkIfUserIsLoggedIn(String ip) {
-		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, ip)) {
+		//TODO: Muss noch funktionieren
+		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, "number" + ip)) {
 			DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
 			String formattedString = LocalDate.now().format(formatter);
+			return true;
 			return getToken(ip) != null && currentUser != null && getToken(ip).getUserId().equals(currentUser.getId())
 					&& Integer.parseInt(getToken(ip).getToDate()) <= Integer.parseInt(formattedString);
 		}
@@ -302,7 +304,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 		for (Post post : list) {
 			for (User user : userList) {
-				if (post.getUserId() == user.getId()) {
+				if (post.getUsername() == user.getUsername()) {
 					resultList.add(post);
 				}
 			}
@@ -317,7 +319,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 		String key = KEY_PREFIX_POST + "number" + id;
 		srt_hashOps.put(key, "id", id);
-		srt_hashOps.put(key, "userId", "Me");
+		srt_hashOps.put(key, "username", currentUser.getUsername());
 		srt_hashOps.put(key, "text", post.getText());
 		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
 		String formattedString = LocalDate.now().format(formatter);
@@ -329,7 +331,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 		Post postCopy = new Post();
 		postCopy.setId(id);
-		postCopy.setUserId("Me");
+		postCopy.setUsername(currentUser.getUsername());
 		postCopy.setText(post.getText());
 		postCopy.setDate(formattedString);
 		// to show how objects can be saved
@@ -341,10 +343,10 @@ public class UserRepositoryImpl implements UserRepository {
 	public void addToken(String ip) {
 		String id = String.valueOf(tokenid.incrementAndGet());
 
-		String key = KEY_PREFIX_TOKEN + "number" + id;
+		String key = KEY_PREFIX_TOKEN + "number" + ip;
 		srt_hashOps.put(key, "ip", ip);
 		srt_hashOps.put(key, "id", id);
-		srt_hashOps.put(key, "userId", "Me");
+		srt_hashOps.put(key, "userId", currentUser.getId());
 		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
 		String formattedString = LocalDate.now().plusWeeks(1).format(formatter);
 		srt_hashOps.put(key, "toDate", formattedString);
@@ -356,7 +358,7 @@ public class UserRepositoryImpl implements UserRepository {
 		Token token = new Token();
 		token.setId(id);
 		token.setIp(ip);
-		token.setUserId("Me");
+		token.setUserId(currentUser.getId());
 		token.setToDate(formattedString);
 		// to show how objects can be saved
 		rt_hashOps_token.put(KEY_HASH_ALL_TOKEN, key, token);
@@ -365,7 +367,7 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	public void follow(String username) {
-		String key = KEY_PREFIX_FOLLOWER + String.valueOf(currentUser.getUsername());
+		String key = KEY_PREFIX_FOLLOWER + currentUser.getUsername();
 
 		List<String> usernamesList;
 
