@@ -44,6 +44,23 @@ public class UserController {
 		return "users";
 	}
 
+
+	/**
+	 *
+	 * get all posts and users to homepage
+	 *
+	 *
+	 * */
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String getAllUsersHome(Model model) {
+		Map<String, User> retrievedUsers = userRepository.getAllUsers();
+		model.addAttribute("users", retrievedUsers);
+		model.addAttribute("posts", userRepository.getAllPosts());
+
+		return "home";
+	}
+
+
 	/**
 	 * get information for user with username
 	 * 
@@ -59,6 +76,9 @@ public class UserController {
 		model.addAttribute("userFound", found);
 		return "oneUser";
 	}
+
+
+
 
 	/**
 	 * redirect to page to add a new user
@@ -98,6 +118,25 @@ public class UserController {
 	@RequestMapping(value = "/addPost", method = RequestMethod.GET)
 	public String addPost(@ModelAttribute Post post) {
 		return "newPost";
+	}
+
+
+
+	@RequestMapping(value = "/logInUser", method = RequestMethod.GET)
+	public String logInUser(@ModelAttribute Greeting greeting) {
+		return "logInUser";
+	}
+
+
+	@RequestMapping(value = "/logInUser", method = RequestMethod.POST)
+	public String logInUser(@ModelAttribute Greeting greeting, Model model) {
+
+		boolean logInSuccess = userRepository.logInUser(greeting.getUsername(), greeting.getPassword(), 1);
+		model.addAttribute("message", "User logged in");
+		if(logInSuccess)
+			return "home";
+		else
+			return "logInUser";
 	}
 
 	/**

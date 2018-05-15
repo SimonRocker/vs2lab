@@ -2,31 +2,23 @@ package de.hska.lkit.demo.redis.controller;
 
 public class Greeting {
 
-    private String name;
-    private String content;
-    private boolean bootstrap;
+    private String username;
+    private String password;
 
-    public String getName() {
-        return name;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getContent() {
-        return content;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setPassword(String content) {
+        this.password = content;
     }
-
-	public boolean isBootstrap() {
-		return bootstrap;
-	}
-
-	public void setBootstrap(boolean bootstrap) {
-		this.bootstrap = bootstrap;
-	}    
 }

@@ -2,9 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Handling Form Submission</title>
-
-
-
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,73 +15,27 @@
 <div class="outer">
     <div class="top">
 
+        <a class="homeButton glyphicon glyphicon-home" th:href="@{/home}"></a>
+        <a class="button newPostButton glyphicon glyphicon-pencil" th:href="@{/addPost}"></a>
+
+        <form class="form">
+            <button type="submit" class="btn btn-default button searchButton glyphicon glyphicon-search"></button>
+            <input class="searchbar" type="text" name="search" placeholder="Search.."/>
+
+        </form>
 
     </div>
     <div class="row">
         <div class="col-md-3 side left">
             <h3>You´re following:</h3>
-            <ul class="followingList">
+            <ul class="followingList" th:each="element : ${users}">
 
                 <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Raina Al-Hashim</p>
-                </li>
+                    <div class="profilePicSmall glyphicon glyphicon-user"></div>
+                    <p class="person" th:text="${element.value.getUsername()}">Username</p>
+                    <!--<img class="profilePicSmall" href="../css/profileIcon.png" th:src="@{/css/profileIcon.png}"/>-->
 
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Citlalli McDonald</p>
                 </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Adelyn Breiner</p>
-                </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Oskari Atanasov</p>
-                </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Sima Snaaijer</p>
-                </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Timur Lindsay</p>
-                </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Laima Naldi</p>
-                </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Iapheth Lawrence</p>
-                </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Simon Avcı</p>
-                </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Ferdinand Sommer</p>
-                </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Rodolf Prinz</p>
-                </li>
-
-                <li class="following">
-                    <img class="profilePicSmall" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <p class="person">Thorben Paulis</p>
-                </li>
-
             </ul>
 
             <div class="dot"></div>
@@ -94,35 +45,20 @@
 
         <div class="col-md-6 middle">
 
-            <div class="post">
-                <div class="postHeader">
-                    <img class="profilePic" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <h2 class="author">Author</h2>
-                </div>
+            <ul th:each="element : ${posts}">
+                <li>
+                    <div class="post">
+                        <div class="postHeader">
+                            <!--<img class="profilePic"  href="../css/profileIcon.png" th:src="@{/css/profileIcon.png}"/>-->
+                            <div class="profilePic glyphicon glyphicon-user"></div>
+                            <h2 class="author" th:text="${element.value.getUserId()}">Author</h2>
+                        </div>
 
-                <p class="content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                <P class="date">dd.mm.yyyy</P>
-            </div>
-
-            <div class="post">
-                <div class="postHeader">
-                    <img class="profilePic" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <h2 class="author">Author</h2>
-                </div>
-
-                <p class="content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                <P class="date">dd.mm.yyyy</P>
-            </div>
-
-            <div class="post">
-                <div class="postHeader">
-                    <img class="profilePic" src="Images/profilbild.png" alt="profile pic"> </img>
-                    <h2 class="author">Author</h2>
-                </div>
-
-                <p class="content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                <P class="date">dd.mm.yyyy</P>
-            </div>
+                        <p class="content" th:text="${element.value.getText()}"> content </p>
+                        <P class="date" th:text="${element.value.getDate()}">dd.mm.yyyy</P>
+                    </div>
+                </li>
+            </ul>
 
         </div>
         <div class="col-md-3 side right"></div>
