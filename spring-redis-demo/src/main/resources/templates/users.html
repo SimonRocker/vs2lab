@@ -5,57 +5,56 @@
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- The above 3 meta tags *must* come first in the head -->
+
 <link th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
 	rel="stylesheet" media="screen" />
+
+	<link href="../static/css/Layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
 </head>
 <body>
-	<div class="container">
 
-		<h3>all Users</h3>
+<div class="outer">
+	<div class="top">
+		<a class="homeButton glyphicon glyphicon-home" th:href="@{/home}"></a>
+		<a class="button newPostButton glyphicon glyphicon-pencil" th:href="@{/addPost}"></a>
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th>key</th>
-					<th>username</th>
-					<th>firstname</th>
-					<th>lastname</th>
-				</tr>
-			</thead>
+		<form class="form">
+			<button type="submit" class="btn btn-default button searchButton glyphicon glyphicon-search"></button>
+			<input class="searchbar" type="text" name="search" placeholder="Search.."/>
 
-			<tbody>
-				<tr th:each="element : ${users}">
-					<td th:text="${element.key}">key</td>
-					<td th:text="${element.value.username}">Some name</td>
-					<td th:text="${element.value.firstname}">Some name</td>
-					<td th:text="${element.value.lastname}">Some name</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<h3>all Posts</h3>
-
-		<table class="table">
-			<thead>
-			<tr>
-				<th>postId</th>
-				<th>userId</th>
-				<th>date</th>
-				<th>text</th>
-			</tr>
-			</thead>
-
-			<tbody>
-			<tr th:each="element : ${posts}">
-				<td th:text="${element.key}">key</td>
-				<td th:text="${element.value.userId}">Some name</td>
-				<td th:text="${element.value.date}">Some name</td>
-				<td th:text="${element.value.text}">Some name</td>
-			</tr>
-			</tbody>
-		</table>
+		</form>
 
 	</div>
+	<div class="row">
+
+		<div class="col-md-3 side left"></div>
+
+		<div class="col-md-6 middle">
+
+
+			<h3>all found Users</h3>
+
+			<ul class="userList">
+
+				<li class="userProfile"  th:each="element : ${users}">
+					<!--<form class="form" id="newPostForm" action="#" th:action="@{/follow}"
+						  th:object="${users}" method="post">-->
+						<div class="profilePicBig glyphicon glyphicon-user"></div>
+						<p class="userProfileName" th:text="${element.value.getUsername()}">Username</p>
+						<!--<input type="hidden" name="country" th:value="${element.value.getUsername()}">
+						<button type="submit" class="btn btn-default">Follow</button>
+					</form>-->
+				</li>
+			</ul>
+
+		</div>
+
+		<div class="col-md-3 side right"></div>
+
+	</div>
+</div>
 </body>
 </html>
+
+
+

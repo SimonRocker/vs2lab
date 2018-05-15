@@ -4,6 +4,73 @@ html, body
     height: 100%;
 }
 
+ul{
+    list-style-type: none;
+    padding: 0 !important;
+}
+
+.button{
+    width: 80px;
+    height: 50px;
+    z-index: 10;
+    float: right;
+    margin: 25px 25px 0 0;
+    background-color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    color: #595959;
+}
+
+.newPostButton{
+    padding-top: 14px;
+    margin-top: 24px !important;
+}
+
+.newPostButton:hover{
+    background-color: #e6e6e6;
+}
+
+a:focus, a:hover{
+    color: #595959;
+    text-decoration: none;
+}
+
+.searchbar{
+    width: 130px;
+    height: 50px;
+    color: black;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+    font-size: 16px;
+    margin: 25px 0 0 0;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    float: right;
+
+}
+
+.searchButton{
+    border-radius: 0 4px 4px 0;
+    margin-top: 24px;
+    border-left: none;
+
+
+}
+
+/*input[type="text"]:focus{
+    width: 400px;
+    margin-right: -1px;
+}*/
+
+.searchbar:focus{
+    width: 400px;
+    margin-right: -1px;
+}
+
 .top{
     background-color: #1a75ff;
     color: white;
@@ -62,6 +129,7 @@ h3{
     color: white!important;
     background-color: #1a75ff;
     border-radius: 25px;
+    text-align: center;
 }
 
 .author{
@@ -81,7 +149,11 @@ h3{
     height: 50px;
     width: 50px;
     float: left;
-    margin-top: 10px;
+    margin-top: 4px;
+    font-size: 30px;
+    background-color: #cccccc;
+    padding-top: 8px;
+    padding-left: 10px;
 }
 
 .profilePicSmall{
@@ -89,16 +161,12 @@ h3{
     height: 30px;
     width: 30px;
     float: left;
+    background-color: #cccccc;
+    padding-top: 5px;
+    font-size: 18px;
 }
 
-.profilePicBig{
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    float: left;
-    margin-top: 10px;
-    margin-left: 10px;
-}
+
 
 .profileName{
     float: left;
@@ -238,4 +306,107 @@ featherIcon{
     width: 20px;
     float: right;
     margin-right: -30px;
+}
+
+.homeButton{
+    color: white;
+    font-size: 46px;
+    float: left;
+    margin-top: 28px;
+    margin-left: 25px;
+}
+
+/*...................................newPostTemplate................................*/
+.postTextField{
+    height: 300px;
+    width: 100%;
+}
+.postTextFieldDummy{
+    display: none;
+}
+
+/*...................................logInUser................................*/
+
+.logInBackground{
+    background-color: #1a75ff;
+    height: 100%;
+    width: 100%;
+}
+
+.logInBox{
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    margin-top: 100px;
+    background-color: white;
+    text-align: center;
+    padding-top: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.loginInput{
+    width: 172px;
+    height: 60px;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.usernameInput{
+    margin-top: 50px;
+}
+
+.loginHeading{
+    margin-top: 50px;
+    background-color: #1a75ff;
+    color: white;
+    height: 45px;
+}
+
+.loginSubmit{
+    margin-top: 180px;
+
+}
+
+.registerSubmit{
+    margin-top: 35px;
+}
+
+.loginSubmitButton{
+    width: 100px;
+    height: 40px;
+    background-color: #1a75ff;
+    color: white;
+    font-size: 20px;
+    border-radius: 40px;
+}
+
+.loginText{
+    font-size: 20px;
+}
+
+/*...................................Users................................*/
+
+.userProfile{
+    height: 100px;
+    border-bottom: 1px solid black;
+}
+
+.profilePicBig{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 51px;
+    padding-top: 15px;
+    padding-left: 14px;
+    background-color: #cccccc;
+}
+
+.userProfileName{
+    font-size: 25px;
+    padding-top: 32px;
+    padding-left: 120px;
 }

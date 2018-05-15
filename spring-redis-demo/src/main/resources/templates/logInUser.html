@@ -1,10 +1,7 @@
-
-
-
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Getting Started</title>
+<title>Getting Started</title>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,8 +13,8 @@
 <body>
 <div class="container logInBackground">
 	<div class="logInBox">
-		<h1 class="loginHeading">Register</h1>
-		<form action="#" th:action="@{/adduser}" th:object="${user}"
+		<h1 class="loginHeading">Login</h1>
+		<form action="#" th:action="@{/logInUser}" th:object="${greeting}"
 			  method="post">
 
 			<div class="loginInput usernameInput" >
@@ -28,23 +25,14 @@
 				<p class="loginText"> Password </p>
 				<input type="password" th:field="*{password}" />
 			</div>
-
-			<div class="loginInput" >
-				<p class="loginText"> Firstname </p>
-				<input type="text" th:field="*{firstname}" />
-			</div>
-
-			<div class="loginInput" >
-				<p class="loginText"> Lastname </p>
-				<input type="text" th:field="*{lastname}" />
-			</div>
-
-			<p class="registerSubmit"> <input class="loginSubmitButton" type="submit" value="Register" /></p>
+			<p class="loginSubmit"> <input class="loginSubmitButton" type="submit" value="Login" /></p>
 		</form>
+		<a th:href="@{/adduser}">Register</a>
 
 	</div>
 
 </div>
 </body>
 </html>
+
 
