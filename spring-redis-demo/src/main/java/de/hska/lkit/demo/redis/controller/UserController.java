@@ -175,7 +175,23 @@ public class UserController {
 		model.addAttribute("users", retrievedUsers);
 		return "users";
 	}
-	
+
+	public void follow(String username){
+		userRepository.follow(username);
+	}
+
+	@RequestMapping(value = "/users", method = RequestMethod.POST)
+	public String follow(@ModelAttribute String username, Model model) {
+
+		userRepository.follow(username);
+		model.addAttribute("message", "User successfully followed");
+
+		Map<String, User> retrievedUsers = userRepository.getAllUsers();
+
+		model.addAttribute("users", retrievedUsers);
+		model.addAttribute("relation", userRepository.getAllRelations());
+		return "users";
+	}
 	
 	
 

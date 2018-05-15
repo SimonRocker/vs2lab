@@ -408,5 +408,19 @@ featherIcon{
 .userProfileName{
     font-size: 25px;
     padding-top: 32px;
-    padding-left: 120px;
+    padding-left: 40px;
+}
+
+.followButton{
+    float: right;
+    background-color: #1a75ff;
+    color: white;
+    font-size: 20px;
+    margin-top: 28px;
+}
+
+.usernameWrapper{
+    width: 300px;
+    height: 50px;
+    float: left;
 }

@@ -364,7 +364,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 	}
 
-	public void follow(User user) {
+	public void follow(String username) {
 		String key = KEY_PREFIX_FOLLOWER + String.valueOf(currentUser.getUsername());
 
 		List<String> usernamesList;
@@ -377,8 +377,8 @@ public class UserRepositoryImpl implements UserRepository {
 			usernamesList = new ArrayList<String>();
 		}
 
-		if(!usernamesList.contains(user.getUsername())) {
-			usernamesList.add(user.getUsername());
+		if(!usernamesList.contains(username)) {
+			usernamesList.add(username);
 		}
 
 		String value = "";
@@ -405,6 +405,11 @@ public class UserRepositoryImpl implements UserRepository {
 	@Override
 	public Map<String, Token> getAllTokens() {
 		return rt_hashOps_token.entries(KEY_HASH_ALL_TOKEN);
+	}
+
+	@Override
+	public Map<String, Follower_Relation> getAllRelations() {
+		return rt_hashOps_follower_relation.entries(KEY_HASH_ALL_FOLLOWERS);
 	}
 
 }

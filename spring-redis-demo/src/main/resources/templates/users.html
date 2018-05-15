@@ -36,13 +36,28 @@
 			<ul class="userList">
 
 				<li class="userProfile"  th:each="element : ${users}">
-					<!--<form class="form" id="newPostForm" action="#" th:action="@{/follow}"
-						  th:object="${users}" method="post">-->
+					<form class="form" action="#" th:action="@{/users}"
+						  th:object="${users}" method="post">
 						<div class="profilePicBig glyphicon glyphicon-user"></div>
-						<p class="userProfileName" th:text="${element.value.getUsername()}">Username</p>
-						<!--<input type="hidden" name="country" th:value="${element.value.getUsername()}">
-						<button type="submit" class="btn btn-default">Follow</button>
-					</form>-->
+						<div class="usernameWrapper">
+							<p class="userProfileName" th:text="${element.value.getUsername()}">Username</p>
+						</div>
+						<input type="hidden" name="country" th:value="${element.value.getUsername()}"/>
+						<button type="submit" class="btn btn-default followButton">Follow</button>
+					</form>
+				</li>
+			</ul>
+
+
+			<ul class="userList">
+
+				<li class="userProfile"  th:each="element : ${relation}">
+
+						<div class="profilePicBig glyphicon glyphicon-user"></div>
+					<p class="userProfileName" th:text="${element.value.getUsernameFollower()}">Username</p>
+						<p class="userProfileName" th:text="${element.value.getUsernamesFollowed()}">Username</p>
+
+
 				</li>
 			</ul>
 
@@ -50,27 +65,6 @@
 
 		<div class="col-md-3 side right"></div>
 
-		<h3>all Tokens</h3>
-
-		<table class="table">
-			<thead>
-			<tr>
-				<th>id</th>
-				<th>userId</th>
-				<th>ip</th>
-				<th>toDate</th>
-			</tr>
-			</thead>
-
-			<tbody>
-			<tr th:each="element : ${tokens}">
-				<td th:text="${element.id}">key</td>
-				<td th:text="${element.value.userId}">Some name</td>
-				<td th:text="${element.value.ip}">Some name</td>
-				<td th:text="${element.value.toDate}">Some name</td>
-			</tr>
-			</tbody>
-		</table>
 
 	</div>
 </div>
