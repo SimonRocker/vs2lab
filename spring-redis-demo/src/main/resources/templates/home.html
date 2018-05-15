@@ -51,7 +51,7 @@
                         <div class="postHeader">
                             <!--<img class="profilePic"  href="../css/profileIcon.png" th:src="@{/css/profileIcon.png}"/>-->
                             <div class="profilePic glyphicon glyphicon-user"></div>
-                            <h2 class="author" th:text="${element.value.getUserId()}">Author</h2>
+                            <h2 class="author" th:text="${element.value.getUsername()}">Author</h2>
                         </div>
 
                         <p class="content" th:text="${element.value.getText()}"> content </p>

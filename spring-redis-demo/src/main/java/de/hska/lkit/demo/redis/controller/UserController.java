@@ -57,7 +57,7 @@ public class UserController {
 	 *
 	 * */
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String getAllUsersHome(Model model) throws UnknownHostException{
+	public String getAllUsersHome(@ModelAttribute Greeting greeting, Model model) throws UnknownHostException{
 		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
 			return "logInUser";
@@ -78,7 +78,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/user/{username}", method = RequestMethod.GET)
-	public String getOneUsers(@PathVariable("username") String username, Model model) throws UnknownHostException{
+	public String getOneUsers(@ModelAttribute Greeting greeting, @PathVariable("username") String username, Model model) throws UnknownHostException{
 		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
 			return "logInUser";
@@ -112,7 +112,8 @@ public class UserController {
 	@RequestMapping(value = "/adduser", method = RequestMethod.POST)
 	public String saveUser(@ModelAttribute User user, Model model) throws UnknownHostException{
 
-		userRepository.saveUser(user);
+		boolean success = userRepository.saveUser(user);
+		if(!success) return "logInUser";
 		userRepository.logInUser(user.getUsername(), user.getPassword(), InetAddress.getLocalHost().getHostAddress());
 		model.addAttribute("message", "User successfully added");
 
@@ -128,7 +129,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/addPost", method = RequestMethod.GET)
-	public String addPost(@ModelAttribute Post post, Greeting greeting) throws UnknownHostException{
+	public String addPost(@ModelAttribute Greeting greeting, @ModelAttribute Post post) throws UnknownHostException{
 		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
 			return "logInUser";
@@ -145,7 +146,6 @@ public class UserController {
 
 	@RequestMapping(value = "/logInUser", method = RequestMethod.POST)
 	public String logInUser(@ModelAttribute Greeting greeting, Model model) throws UnknownHostException {
-		String testString = greeting.getUsername();
 		boolean logInSuccess = userRepository.logInUser(greeting.getUsername(), greeting.getPassword(), InetAddress.getLocalHost().getHostAddress());
 		if(logInSuccess)
 			return "home";
@@ -162,7 +162,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/addPost", method = RequestMethod.POST)
-	public String writePost(@ModelAttribute Post post, Model model) throws UnknownHostException{
+	public String writePost(@ModelAttribute Greeting greeting, @ModelAttribute Post post, Model model) throws UnknownHostException{
 		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
 			return "logInUser";
@@ -186,7 +186,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/searchuser/{pattern}", method = RequestMethod.GET)
-	public String searchUser(@PathVariable("pattern") String pattern, @ModelAttribute User user, Model model) throws UnknownHostException{
+	public String searchUser(@ModelAttribute Greeting greeting, @PathVariable("pattern") String pattern, @ModelAttribute User user, Model model) throws UnknownHostException{
 		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
 			return "logInUser";
@@ -201,7 +201,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
-	public String follow(@ModelAttribute String username, Model model) {
+	public String follow(@ModelAttribute Greeting greeting, @ModelAttribute String username, Model model) {
 
 		userRepository.follow(username);
 		model.addAttribute("message", "User successfully followed");

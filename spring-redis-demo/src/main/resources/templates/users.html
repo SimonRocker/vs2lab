@@ -41,25 +41,13 @@
 						<div class="profilePicBig glyphicon glyphicon-user"></div>
 						<div class="usernameWrapper">
 							<p class="userProfileName" th:text="${element.value.getUsername()}">Username</p>
+							<p class="userProfileName" th:text="${element.value.getPassword()}">Password</p>
 						</div>
 						<input type="hidden" name="country" th:value="${element.value.getUsername()}"/>
 						<button type="submit" class="btn btn-default followButton">Follow</button>
 					</form>
 				</li>
 			</ul>
-
-
-			<!--<ul class="userList">
-
-				<li class="userProfile"  th:each="element : ${relation}">
-
-						<div class="profilePicBig glyphicon glyphicon-user"></div>
-					<p class="userProfileName" th:text="${element.value.getUsernameFollower()}">Username</p>
-						<p class="userProfileName" th:text="${element.value.getUsernamesFollowed()}">Username</p>
-
-
-				</li>
-			</ul>-->
 
 		</div>
 		
