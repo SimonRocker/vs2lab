@@ -2,9 +2,7 @@ package de.hska.lkit.demo.redis.repo;
 
 import java.util.*;
 
-import de.hska.lkit.demo.redis.model.User;
-import de.hska.lkit.demo.redis.model.Post;
-import de.hska.lkit.demo.redis.model.Post;
+import de.hska.lkit.demo.redis.model.*;
 
 public interface UserRepository {
 	
@@ -13,7 +11,7 @@ public interface UserRepository {
 	 * 
 	 * @param user
 	 */
-	public void saveUser(User user);
+	public boolean saveUser(User user);
 	
 	
 	/**
@@ -80,4 +78,11 @@ public interface UserRepository {
 	 */
 	public void writePost(Post post);
 
+	/**
+	 *
+	 * Let you get all Tokens
+	 *
+	 * @return all Tokens
+	 */
+	public Map<String, Token> getAllTokens();
 }

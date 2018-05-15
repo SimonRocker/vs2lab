@@ -40,7 +40,7 @@ public class UserController {
 		Map<String, User> retrievedUsers = userRepository.getAllUsers();
 		model.addAttribute("users", retrievedUsers);
 		model.addAttribute("posts", userRepository.getAllPosts());
-
+		model.addAttribute("tokens", userRepository.getAllTokens());
 		return "users";
 	}
 
@@ -133,7 +133,6 @@ public class UserController {
 	public String searchUser(@PathVariable("pattern") String pattern, @ModelAttribute User user, Model model) {
 
 		Map<String, User> retrievedUsers = userRepository.findUsersWith(pattern);
-
 		model.addAttribute("users", retrievedUsers);
 		return "users";
 	}

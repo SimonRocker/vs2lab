@@ -1,7 +1,5 @@
 package de.hska.lkit.demo.redis.repo.impl;
 
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -20,9 +18,7 @@ import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.data.redis.support.atomic.RedisAtomicLong;
 import org.springframework.stereotype.Repository;
 
-import de.hska.lkit.demo.redis.model.User;
-import de.hska.lkit.demo.redis.model.Post;
-import de.hska.lkit.demo.redis.model.Token;
+import de.hska.lkit.demo.redis.model.*;
 import de.hska.lkit.demo.redis.repo.UserRepository;
 
 /**
@@ -45,6 +41,8 @@ public class UserRepositoryImpl implements UserRepository {
 
 	private static final String KEY_SET_ALL_POSTS = "all:posts";
 
+	private static final String KEY_SET_ALL_FOLLOWERS = "all:followers";
+
 	private static final String KEY_ZSET_ALL_USERNAMES = "all:usernames:sorted";
 
 	private static final String KEY_HASH_ALL_USERS = "all:user";
@@ -53,11 +51,15 @@ public class UserRepositoryImpl implements UserRepository {
 
 	private static final String KEY_HASH_ALL_TOKEN = "all:token";
 
+	private static final String KEY_HASH_ALL_FOLLOWERS = "all:follower";
+
 	private static final String KEY_PREFIX_USER = "user:";
 
 	private static final String KEY_PREFIX_POST = "post:";
 
 	private static final String KEY_PREFIX_TOKEN = "token:";
+
+	private static final String KEY_PREFIX_FOLLOWER = "follower:";
 
 	/**
 	 * to generate unique ids for user
@@ -112,6 +114,12 @@ public class UserRepositoryImpl implements UserRepository {
 	@Resource(name = "redisTemplate")
 	private HashOperations<String, String, Token> rt_hashOps_token;
 
+	/**
+	 * hash operations for redisTemplate
+	 */
+	@Resource(name = "redisTemplate")
+	private HashOperations<String, String, Follower_Relation> rt_hashOps_follower_relation;
+
 	private User currentUser;
 	private int currentIp;
 
@@ -144,7 +152,7 @@ public class UserRepositoryImpl implements UserRepository {
 	 * hska.iwi.vslab.repo.UserRepository#saveUser(hska.iwi.vslab.model.User)
 	 */
 	@Override
-	public void saveUser(User user) {
+	public boolean saveUser(User user) {
 		// generate a unique id
 		String id = String.valueOf(userid.incrementAndGet());
 
@@ -153,6 +161,9 @@ public class UserRepositoryImpl implements UserRepository {
 		// to show how objects can be saved
 		// be careful, if username already exists it's not added another time
 		String key = KEY_PREFIX_USER + user.getUsername();
+		if(srt_setOps.isMember(KEY_SET_ALL_USERNAMES, user.getUsername())) {
+			return false;
+		}
 		srt_hashOps.put(key, "id", id);
 		srt_hashOps.put(key, "firstName", user.getFirstname());
 		srt_hashOps.put(key, "lastName", user.getLastname());
@@ -168,6 +179,7 @@ public class UserRepositoryImpl implements UserRepository {
 		// to show how objects can be saved
 		rt_hashOps.put(KEY_HASH_ALL_USERS, key, user);
 
+		return true;
 	}
 
 	@Override
@@ -184,7 +196,7 @@ public class UserRepositoryImpl implements UserRepository {
 		if (srt_setOps.isMember(KEY_SET_ALL_USERNAMES, username)) {
 
 			// get the user data out of the hash object with key "'user:' + username"
-			String key = "user:" + username;
+			String key = KEY_PREFIX_USER + username;
 			user.setId(srt_hashOps.get(key, "id"));
 			user.setFirstname(srt_hashOps.get(key, "firstName"));
 			user.setLastname(srt_hashOps.get(key, "lastName"));
@@ -301,8 +313,6 @@ public class UserRepositoryImpl implements UserRepository {
 	public void writePost(Post post) {
 		//checkIfUserIsLoggedIn(currentUser, currentIp);
 		//checkIfUserIsLoggedIn(currentUser, currentIp);
-
-		logInUser("Me", "test1234", 127001);
 		String id = String.valueOf(postid.incrementAndGet());
 
 		String key = KEY_PREFIX_POST + "number" + id;
@@ -329,7 +339,6 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	public void addToken(int ip) {
-		logInUser("Me", "test1234", 127001);
 		String id = String.valueOf(tokenid.incrementAndGet());
 
 		String key = KEY_PREFIX_TOKEN + "number" + id;
@@ -353,6 +362,49 @@ public class UserRepositoryImpl implements UserRepository {
 		rt_hashOps_token.put(KEY_HASH_ALL_TOKEN, key, token);
 
 
+	}
+
+	public void follow(User user) {
+		String key = KEY_PREFIX_FOLLOWER + String.valueOf(currentUser.getUsername());
+
+		List<String> usernamesList;
+
+		// if username is in set for all usernames,
+		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS, currentUser.getUsername())) {
+			String[] list = srt_hashOps.get(key, "usernamesFollowed").split(" ");
+			usernamesList = Arrays.asList(list);
+		} else {
+			usernamesList = new ArrayList<String>();
+		}
+
+		if(!usernamesList.contains(user.getUsername())) {
+			usernamesList.add(user.getUsername());
+		}
+
+		String value = "";
+		for (String s: usernamesList) {
+			value += s + " ";
+		}
+
+		if (value != null && value.length() > 0 && String.valueOf(value.charAt(value.length() - 1)) == " ") {
+			value = value.substring(0, value.length() - 1);
+		}
+
+		srt_hashOps.put(key, "usernamesFollowed", value);
+
+		// the key for a new user is added to the set for all usernames
+		srt_setOps.add(KEY_SET_ALL_FOLLOWERS, key);
+
+
+		Follower_Relation relation = new Follower_Relation();
+		relation.setUsernameFollower(currentUser.getUsername());
+		relation.setUsernamesFollowed(usernamesList);
+		rt_hashOps_follower_relation.put(KEY_HASH_ALL_FOLLOWERS, key, relation);
+	}
+
+	@Override
+	public Map<String, Token> getAllTokens() {
+		return rt_hashOps_token.entries(KEY_HASH_ALL_TOKEN);
 	}
 
 }
