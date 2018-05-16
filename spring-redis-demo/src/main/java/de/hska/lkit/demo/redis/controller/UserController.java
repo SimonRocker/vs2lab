@@ -1,6 +1,8 @@
 package de.hska.lkit.demo.redis.controller;
 
-import java.util.Map;
+
+import java.util.*;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -38,7 +40,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public String getAllUsers(@ModelAttribute Greeting greeting, Model model) throws UnknownHostException{
+	public String getAllUsers(@ModelAttribute Greeting greeting, Model model, @ModelAttribute Post post) throws UnknownHostException{
 		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
 			return "logInUser";
@@ -64,7 +66,8 @@ public class UserController {
 		Map<String, User> retrievedUsers = userRepository.getAllUsers();
 		model.addAttribute("users", retrievedUsers);
 		model.addAttribute("posts", userRepository.getAllPosts());
-		model.addAttribute("followers", userRepository.getFollowedUsersForCurrentUser());
+		String[] penis = new String[]{"test1", "test2", "test3"};
+		model.addAttribute("followers", userRepository.getFollowedUsersForCurrentUser() );
 
 		return "home";
 	}
@@ -169,6 +172,7 @@ public class UserController {
 			Map<String, User> retrievedUsers = userRepository.getAllUsers();
 			model.addAttribute("users", retrievedUsers);
 			model.addAttribute("posts", userRepository.getAllPosts());
+			model.addAttribute("followers", userRepository.getFollowedUsersForCurrentUser());
 			return "home";
 		}
 		else {
@@ -224,9 +228,9 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
-	public String follow(@ModelAttribute Greeting greeting, @ModelAttribute String username, Model model) {
+	public String follow(@ModelAttribute Greeting greeting, @ModelAttribute Post post, Model model) {
 
-		userRepository.follow(username);
+		userRepository.follow(post.getText());
 		model.addAttribute("message", "User successfully followed");
 
 		Map<String, User> retrievedUsers = userRepository.getAllUsers();
