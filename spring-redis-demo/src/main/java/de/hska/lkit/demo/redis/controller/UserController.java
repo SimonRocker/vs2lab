@@ -38,10 +38,10 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public String getAllUsers(Model model) throws UnknownHostException{
-		/*boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
+	public String getAllUsers(@ModelAttribute Greeting greeting, Model model) throws UnknownHostException{
+		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
-			return "logInUser";*/
+			return "logInUser";
 		Map<String, User> retrievedUsers = userRepository.getAllUsers();
 		model.addAttribute("users", retrievedUsers);
 		model.addAttribute("posts", userRepository.getAllPosts());

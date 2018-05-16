@@ -45,10 +45,18 @@ public interface UserRepository {
 	 *
 	 * logs in User
 	 *
-	 *
 	 * @return boolean, if the login was correct
 	 */
 	public boolean logInUser(String username, String password, String ip);
+
+
+	/**
+	 *
+	 * Logs out user
+	 *
+	 * @param ip
+	 */
+	public void logOutUser(String ip);
 
 
 	/**
