@@ -395,6 +395,7 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	public void follow(String username) {
+		System.out.println(username + "hallo");
 		String key = KEY_PREFIX_FOLLOWER + currentUser.getUsername();
 
 		List<String> usernamesList;
