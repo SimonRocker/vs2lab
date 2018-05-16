@@ -398,12 +398,12 @@ public class UserRepositoryImpl implements UserRepository {
 		System.out.println(username + " ist der Nutzer");
 		String key = KEY_PREFIX_FOLLOWER + currentUser.getUsername();
 
-		List<String> usernamesList;
+		ArrayList<String> usernamesList;
 
 		// if username is in set for all usernames,
 		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS, currentUser.getUsername())) {
 			String[] list = srt_hashOps.get(key, "usernamesFollowed").split(" ");
-			usernamesList = Arrays.asList(list);
+			usernamesList = new ArrayList<String>(Arrays.asList(list));
 		} else {
 			usernamesList = new ArrayList<String>();
 		}
