@@ -164,12 +164,15 @@ public class UserController {
 	public String logInUser(@ModelAttribute Greeting greeting, Model model, @ModelAttribute Post post) throws UnknownHostException {
 		boolean logInSuccess = userRepository.logInUser(greeting.getUsername(), greeting.getPassword(), InetAddress.getLocalHost().getHostAddress());
 		if(logInSuccess)
+		{
 			Map<String, User> retrievedUsers = userRepository.getAllUsers();
 			model.addAttribute("users", retrievedUsers);
 			model.addAttribute("posts", userRepository.getAllPosts());
 			return "home";
-		else
+		}
+		else {
 			return "logInUser";
+		}
 	}
 
 	/**
