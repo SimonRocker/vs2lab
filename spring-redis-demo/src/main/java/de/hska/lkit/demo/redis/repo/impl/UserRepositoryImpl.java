@@ -395,6 +395,7 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	public void follow(String username) {
+		System.out.println(username + " ist der Nutzer");
 		String key = KEY_PREFIX_FOLLOWER + currentUser.getUsername();
 
 		List<String> usernamesList;
@@ -423,7 +424,7 @@ public class UserRepositoryImpl implements UserRepository {
 		srt_hashOps.put(key, "usernamesFollowed", value);
 
 		// the key for a new user is added to the set for all usernames
-		srt_setOps.add(KEY_SET_ALL_FOLLOWERS, key);
+		srt_setOps.add(KEY_SET_ALL_FOLLOWERS, currentUser.getUsername());
 
 
 		Follower_Relation relation = new Follower_Relation();
@@ -444,6 +445,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@Override
 	public List<String> getFollowedUsersForCurrentUser() {
+		System.out.println("getting users...");
 		String key = KEY_PREFIX_FOLLOWER + currentUser.getUsername();
 
 		List<String> usernamesList;
@@ -451,6 +453,9 @@ public class UserRepositoryImpl implements UserRepository {
 		// if username is in set for all follower Relations, get his followed users names
 		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS, currentUser.getUsername())) {
 			String[] list = srt_hashOps.get(key, "usernamesFollowed").split(" ");
+			for (String s: list) {
+				System.out.println(s + " Nutzer");
+			}
 			return Arrays.asList(list);
 		} else {
 			return null;
