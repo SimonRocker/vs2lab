@@ -270,9 +270,16 @@ public class UserRepositoryImpl implements UserRepository {
 		} else {return false;}
 	}
 
+	public void logOutUser(String ip) {
+		currentUser = null;
+		//TODO: Remove Token
+	}
+
 	@Override
 	public boolean checkIfUserIsLoggedIn(String ip) {
 		//TODO: Muss noch funktionieren
+		return (currentUser != null);
+		/*
 		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, "number" + ip)) {
 			DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
 			String formattedString = LocalDate.now().format(formatter);
@@ -280,7 +287,7 @@ public class UserRepositoryImpl implements UserRepository {
 			return getToken(ip) != null && currentUser != null && getToken(ip).getUserId().equals(currentUser.getId())
 					&& Integer.parseInt(getToken(ip).getToDate()) <= Integer.parseInt(formattedString);
 		}
-		return false;
+		return false;*/
 	}
 
 	@Override
@@ -290,12 +297,13 @@ public class UserRepositoryImpl implements UserRepository {
 
 	/**
 	 *
-	 * Gets you all posts of the wanted users
+	 * Gets you all posts of the wanted users.
+	 * If you call it without usernames, you get the full list.
 	 *
 	 * @param userList
 	 * @return
 	 */
-	public List<Post> getListOfPostsFromUsers(ArrayList<User> userList) {
+	public List<Post> getListOfPostsFromUsers(List<String> userList) {
 		ArrayList<Post> list = new ArrayList<Post>(getAllPosts().values());
 
 		if (userList == null || userList.isEmpty()) return list;
@@ -303,8 +311,8 @@ public class UserRepositoryImpl implements UserRepository {
 		ArrayList<Post> resultList = new ArrayList<Post>();
 
 		for (Post post : list) {
-			for (User user : userList) {
-				if (post.getUsername() == user.getUsername()) {
+			for (String username : userList) {
+				if (post.getUsername().equals(username)) {
 					resultList.add(post);
 				}
 			}
@@ -360,7 +368,6 @@ public class UserRepositoryImpl implements UserRepository {
 		token.setIp(ip);
 		token.setUserId(currentUser.getId());
 		token.setToDate(formattedString);
-		// to show how objects can be saved
 		rt_hashOps_token.put(KEY_HASH_ALL_TOKEN, key, token);
 
 
@@ -412,6 +419,20 @@ public class UserRepositoryImpl implements UserRepository {
 	@Override
 	public Map<String, Follower_Relation> getAllRelations() {
 		return rt_hashOps_follower_relation.entries(KEY_HASH_ALL_FOLLOWERS);
+	}
+
+	public List<String> getFollowedUsersForCurrentUser() {
+		String key = KEY_PREFIX_FOLLOWER + currentUser.getUsername();
+
+		List<String> usernamesList;
+
+		// if username is in set for all follower Relations, get his followed users names
+		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS, currentUser.getUsername())) {
+			String[] list = srt_hashOps.get(key, "usernamesFollowed").split(" ");
+			return Arrays.asList(list);
+		} else {
+			return null;
+		}
 	}
 
 }
