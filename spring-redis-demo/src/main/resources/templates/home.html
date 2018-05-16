@@ -29,7 +29,7 @@
     </div>
     <div class="row">
         <div class="col-md-3 side left">
-            <h3>You´re following:</h3>
+            <h3>all users:</h3>
             <ul class="followingList" th:each="element : ${users}">
 
                 <li class="following">
@@ -63,7 +63,22 @@
             </ul>
 
         </div>
-        <div class="col-md-3 side right"></div>
+        <div class="col-md-3 side right">
+            <h3>You´re following:</h3>
+            <ul class="followingList" th:each="element : ${followers}">
+
+                <li class="following">
+                    <div class="profilePicSmall glyphicon glyphicon-user"></div>
+                    <p class="person" th:text="${element.value}">Username</p>
+                    <!--<img class="profilePicSmall" href="../css/profileIcon.png" th:src="@{/css/profileIcon.png}"/>-->
+
+                </li>
+            </ul>
+
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
     </div>
 </div>
 
