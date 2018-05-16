@@ -28,8 +28,7 @@
             <form class="form" id="newPostForm" action="#" th:action="@{/addPost}"
                   th:object="${post}" method="post">
                 <div class="form-group">
-                    <label></label> <input class="postTextFieldDummy" type="text" th:field="*{text}" />
-                    <textarea rows="10" cols="30" name="comment" form="newPostForm" class="postTextField">Enter text here...</textarea>
+                    <label></label> <input class="postTextField" type="text" th:field="*{text}" />
                 </div>
                 <button type="submit" class="btn btn-default">Save</button>
             </form>

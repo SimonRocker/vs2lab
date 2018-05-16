@@ -16,12 +16,14 @@
     <div class="top">
 
         <a class="homeButton glyphicon glyphicon-home" th:href="@{/home}"></a>
+
+        <a class="btn btn-default button logOutButton glyphicon glyphicon-log-out" th:href="@{/logInUser}"></a>
+
         <a class="button newPostButton glyphicon glyphicon-pencil" th:href="@{/addPost}"></a>
 
-        <form class="form">
+        <form class="form"  action="#" th:action="@{/home}" th:object="${post}" method="post">
             <button type="submit" class="btn btn-default button searchButton glyphicon glyphicon-search"></button>
-            <input class="searchbar" type="text" name="search" placeholder="Search.."/>
-
+            <input class="searchbar" type="text" name="pattern" placeholder="Search.." th:field="*{text}"/>
         </form>
 
     </div>

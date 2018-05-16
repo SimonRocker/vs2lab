@@ -57,7 +57,7 @@ public class UserController {
 	 *
 	 * */
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String getAllUsersHome(@ModelAttribute Greeting greeting, Model model) throws UnknownHostException{
+	public String getAllUsersHome(@ModelAttribute Greeting greeting, Model model, @ModelAttribute Post post) throws UnknownHostException{
 		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
 			return "logInUser";
@@ -65,8 +65,26 @@ public class UserController {
 		model.addAttribute("users", retrievedUsers);
 		model.addAttribute("posts", userRepository.getAllPosts());
 
+
 		return "home";
 	}
+
+
+
+	@RequestMapping(value = "/home", method = RequestMethod.POST)
+	public String searchUsers(@ModelAttribute Greeting greeting, Model model, @ModelAttribute Post post) throws UnknownHostException{
+
+		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
+		if(!logInSuccess)
+			return "logInUser";
+
+		Map<String, User> foundUsers = userRepository.findUsersWith(post.getText());
+
+		model.addAttribute("users", foundUsers);
+		return "users";
+	}
+
+
 
 
 	/**
@@ -136,16 +154,14 @@ public class UserController {
 		return "newPost";
 	}
 
-
-
 	@RequestMapping(value = "/logInUser", method = RequestMethod.GET)
-	public String logInUser(@ModelAttribute Greeting greeting) {
+	public String logInUser(@ModelAttribute Greeting greeting) throws UnknownHostException{
+		userRepository.logOutUser(InetAddress.getLocalHost().getHostAddress());
 		return "logInUser";
 	}
 
-
 	@RequestMapping(value = "/logInUser", method = RequestMethod.POST)
-	public String logInUser(@ModelAttribute Greeting greeting, Model model) throws UnknownHostException {
+	public String logInUser(@ModelAttribute Greeting greeting, Model model, @ModelAttribute Post post) throws UnknownHostException {
 		boolean logInSuccess = userRepository.logInUser(greeting.getUsername(), greeting.getPassword(), InetAddress.getLocalHost().getHostAddress());
 		if(logInSuccess)
 			return "home";
