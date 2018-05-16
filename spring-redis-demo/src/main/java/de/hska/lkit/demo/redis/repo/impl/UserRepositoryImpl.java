@@ -294,7 +294,27 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@Override
 	public Map<String, Post> getAllPosts() {
-		return rt_hashOps_post.entries(KEY_HASH_ALL_POSTS);
+			Map<String, Post> unsortMap = rt_hashOps_post.entries(KEY_HASH_ALL_POSTS);
+
+			// 1. Convert Map to List of Map
+			List<Map.Entry<String, Post>> list =
+					new LinkedList<Map.Entry<String, Post>>(unsortMap.entrySet());
+
+			// 2. Sort list with Collections.sort(), provide a custom Comparator
+			//    Try switch the o1 o2 position for a different order
+			Collections.sort(list, new Comparator<Map.Entry<String, Post>>() {
+				public int compare(Map.Entry<String, Post> o1,
+								   Map.Entry<String, Post> o2) {
+					return Integer.parseInt(o2.getValue().getDate()) - Integer.parseInt(o1.getValue().getDate());
+				}
+			});
+
+			// 3. Loop the sorted list and put it into a new insertion order Map LinkedHashMap
+			Map<String, Post> sortedMap = new LinkedHashMap<String, Post>();
+			for (Map.Entry<String, Post> entry : list) {
+				sortedMap.put(entry.getKey(), entry.getValue());
+			}
+		return sortedMap;
 	}
 
 	/**
