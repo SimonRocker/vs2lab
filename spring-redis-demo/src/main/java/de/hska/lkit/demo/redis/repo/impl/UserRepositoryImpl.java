@@ -442,6 +442,7 @@ public class UserRepositoryImpl implements UserRepository {
 		return rt_hashOps_follower_relation.entries(KEY_HASH_ALL_FOLLOWERS);
 	}
 
+	@Override
 	public List<String> getFollowedUsersForCurrentUser() {
 		String key = KEY_PREFIX_FOLLOWER + currentUser.getUsername();
 
