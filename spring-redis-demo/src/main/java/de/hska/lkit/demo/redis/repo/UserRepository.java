@@ -95,4 +95,6 @@ public interface UserRepository {
 	public void follow(String username);
 
 	public Map<String, Follower_Relation> getAllRelations();
+
+	public List<String> getFollowedUsersForCurrentUser();
 }
