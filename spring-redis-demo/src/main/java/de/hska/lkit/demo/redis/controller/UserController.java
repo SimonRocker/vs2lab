@@ -40,7 +40,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public String getAllUsers(@ModelAttribute Greeting greeting, Model model) throws UnknownHostException{
+	public String getAllUsers(@ModelAttribute Greeting greeting, Model model, @ModelAttribute Post post) throws UnknownHostException{
 		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
 			return "logInUser";
