@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d93268cf-3225-42d3-87b9-e08066182e20" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-redis-demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,20 +76,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="75" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+            <state relative-caret-position="315">
+              <caret line="74" column="21" lean-forward="true" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Layout.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Layout.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            <state relative-caret-position="422">
+              <caret line="423" lean-forward="true" selection-start-line="423" selection-end-line="423" />
             </state>
           </provider>
         </entry>
@@ -134,11 +134,11 @@
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newUser.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html" />
-        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" />
       </list>
     </option>
   </component>
@@ -401,12 +401,12 @@
       <workItem from="1526284452084" duration="2173000" />
       <workItem from="1526381367380" duration="18679000" />
       <workItem from="1526485878788" duration="6273000" />
-      <workItem from="1526492741589" duration="5742000" />
+      <workItem from="1526492741589" duration="6282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65462000" />
+    <option name="totallyTimeSpent" value="66002000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -429,10 +429,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2731137" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2731137" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -775,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -847,8 +840,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="75" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+        <state relative-caret-position="315">
+          <caret line="74" column="21" lean-forward="true" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="423" lean-forward="true" selection-start-line="423" selection-end-line="423" />
         </state>
       </provider>
     </entry>
