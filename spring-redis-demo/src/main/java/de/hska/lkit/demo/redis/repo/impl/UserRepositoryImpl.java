@@ -120,8 +120,6 @@ public class UserRepositoryImpl implements UserRepository {
 	@Resource(name = "redisTemplate")
 	private HashOperations<String, String, Follower_Relation> rt_hashOps_follower_relation;
 
-	private User currentUser;
-
 
 	/*
 	 *
@@ -217,7 +215,7 @@ public class UserRepositoryImpl implements UserRepository {
 			token.setId(srt_hashOps.get(key, "id"));
 			token.setIp(srt_hashOps.get(key, "ip"));
 			token.setToDate(srt_hashOps.get(key, "toDate"));
-			token.setUserId(srt_hashOps.get(key, "userId"));
+			token.setUsername(srt_hashOps.get(key, "username"));
 		} else
 			token = null;
 		return token;
@@ -264,20 +262,17 @@ public class UserRepositoryImpl implements UserRepository {
 		User user = getUser(username);
 		if (user == null) return false;
 		if (user.getPassword().equals(password)) {
-			currentUser = user;
-			addToken(ip);
+			addToken(ip, user.getId());
 			return true;
 		} else {return false;}
 	}
 
 	@Override
 	public void logOutUser(String ip) {
-		if(currentUser != null) {
-			currentUser = null;
 			if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, ip)) {
 				String key = KEY_PREFIX_TOKEN + ip;
 				srt_hashOps.put(key, "toDate", "-1");
-			}
+				//srt_hashOps.put(key, "useragent", )
 		}
 	}
 
@@ -286,8 +281,7 @@ public class UserRepositoryImpl implements UserRepository {
 		if (srt_setOps.isMember(KEY_SET_ALL_TOKENS, ip)) {
 			DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
 			String formattedString = LocalDate.now().format(formatter);
-			return getToken(ip) != null && currentUser != null && getToken(ip).getUserId().equals(currentUser.getId())
-					&& Integer.parseInt(getToken(ip).getToDate()) >= Integer.parseInt(formattedString);
+			return getToken(ip) != null && Integer.parseInt(getToken(ip).getToDate()) >= Integer.parseInt(formattedString);
 		}
 		return false;
 	}
@@ -344,12 +338,12 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	@Override
-	public void writePost(Post post) {
+	public void writePost(Post post, String ip) {
 		String id = String.valueOf(postid.incrementAndGet());
 
 		String key = KEY_PREFIX_POST + "number" + id;
 		srt_hashOps.put(key, "id", id);
-		srt_hashOps.put(key, "username", currentUser.getUsername());
+		srt_hashOps.put(key, "username", getToken(ip).getUsername());
 		srt_hashOps.put(key, "text", post.getText());
 		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
 		String formattedString = LocalDate.now().format(formatter);
@@ -358,25 +352,23 @@ public class UserRepositoryImpl implements UserRepository {
 		// the key for a new user is added to the set for all usernames
 		srt_setOps.add(KEY_SET_ALL_POSTS, key);
 
-
 		Post postCopy = new Post();
 		postCopy.setId(id);
-		postCopy.setUsername(currentUser.getUsername());
+		postCopy.setUsername(getToken(ip).getUsername());
 		postCopy.setText(post.getText());
 		postCopy.setDate(formattedString);
 		// to show how objects can be saved
 		rt_hashOps_post.put(KEY_HASH_ALL_POSTS, key, postCopy);
 
-
 	}
 
-	public void addToken(String ip) {
+	public void addToken(String ip, String username) {
 		String id = String.valueOf(tokenid.incrementAndGet());
 
 		String key = KEY_PREFIX_TOKEN + ip;
 		srt_hashOps.put(key, "ip", ip);
 		srt_hashOps.put(key, "id", id);
-		srt_hashOps.put(key, "userId", currentUser.getId());
+		srt_hashOps.put(key, "username", username);
 		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
 		String formattedString = LocalDate.now().plusWeeks(1).format(formatter);
 		srt_hashOps.put(key, "toDate", formattedString);
@@ -387,21 +379,21 @@ public class UserRepositoryImpl implements UserRepository {
 		Token token = new Token();
 		token.setId(id);
 		token.setIp(ip);
-		token.setUserId(currentUser.getId());
+		token.setUsername(username);
 		token.setToDate(formattedString);
 		rt_hashOps_token.put(KEY_HASH_ALL_TOKEN, key, token);
 
 
 	}
 
-	public void follow(String username) {
+	public void follow(String username, String ip) {
 		System.out.println(username + " ist der Nutzer");
-		String key = KEY_PREFIX_FOLLOWER + currentUser.getUsername();
+		String key = KEY_PREFIX_FOLLOWER + getToken(ip).getUsername();
 
 		ArrayList<String> usernamesList;
 
 		// if username is in set for all usernames,
-		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS, currentUser.getUsername())) {
+		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS,  getToken(ip).getUsername())) {
 			String[] list = srt_hashOps.get(key, "usernamesFollowed").split(" ");
 			usernamesList = new ArrayList<String>(Arrays.asList(list));
 		} else {
@@ -424,11 +416,11 @@ public class UserRepositoryImpl implements UserRepository {
 		srt_hashOps.put(key, "usernamesFollowed", value);
 
 		// the key for a new user is added to the set for all usernames
-		srt_setOps.add(KEY_SET_ALL_FOLLOWERS, currentUser.getUsername());
+		srt_setOps.add(KEY_SET_ALL_FOLLOWERS,  getToken(ip).getUsername());
 
 
 		Follower_Relation relation = new Follower_Relation();
-		relation.setUsernameFollower(currentUser.getUsername());
+		relation.setUsernameFollower( getToken(ip).getUsername());
 		relation.setUsernamesFollowed(usernamesList);
 		rt_hashOps_follower_relation.put(KEY_HASH_ALL_FOLLOWERS, key, relation);
 	}
@@ -444,14 +436,14 @@ public class UserRepositoryImpl implements UserRepository {
 	}
 
 	@Override
-	public List<String> getFollowedUsersForCurrentUser() {
+	public List<String> getFollowedUsersForCurrentUser(String ip) {
 		System.out.println("getting users...");
-		String key = KEY_PREFIX_FOLLOWER + currentUser.getUsername();
+		String key = KEY_PREFIX_FOLLOWER +  getToken(ip).getUsername();
 
 		List<String> usernamesList;
 
 		// if username is in set for all follower Relations, get his followed users names
-		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS, currentUser.getUsername())) {
+		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS,  getToken(ip).getUsername())) {
 			String[] list = srt_hashOps.get(key, "usernamesFollowed").split(" ");
 			for (String s: list) {
 				System.out.println(s + " Nutzer");

@@ -66,9 +66,7 @@ public class UserController {
 		Map<String, User> retrievedUsers = userRepository.getAllUsers();
 		model.addAttribute("users", retrievedUsers);
 		model.addAttribute("posts", userRepository.getAllPosts());
-
-		model.addAttribute("followers", userRepository.getFollowedUsersForCurrentUser() );
-
+		model.addAttribute("followers", userRepository.getFollowedUsersForCurrentUser(InetAddress.getLocalHost().getHostAddress()) );
 		return "home";
 	}
 
@@ -172,7 +170,7 @@ public class UserController {
 			Map<String, User> retrievedUsers = userRepository.getAllUsers();
 			model.addAttribute("users", retrievedUsers);
 			model.addAttribute("posts", userRepository.getAllPosts());
-			model.addAttribute("followers", userRepository.getFollowedUsersForCurrentUser());
+			model.addAttribute("followers", userRepository.getFollowedUsersForCurrentUser(InetAddress.getLocalHost().getHostAddress()));
 			return "home";
 		}
 		else {
@@ -194,7 +192,7 @@ public class UserController {
 		if(!logInSuccess)
 			return "logInUser";
 
-		userRepository.writePost(post);
+		userRepository.writePost(post, InetAddress.getLocalHost().getHostAddress());
 		model.addAttribute("message", "Post successfully added");
 
 		Map<String, Post> retrievedPost = userRepository.getAllPosts();
@@ -223,14 +221,14 @@ public class UserController {
 		return "users";
 	}
 
-	public void follow(String username){
-		userRepository.follow(username);
+	public void follow(String username) throws UnknownHostException{
+		userRepository.follow(username, InetAddress.getLocalHost().getHostAddress());
 	}
 
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
-	public String follow(@ModelAttribute Greeting greeting, @ModelAttribute Post post, Model model) {
+	public String follow(@ModelAttribute Greeting greeting, @ModelAttribute Post post, Model model) throws UnknownHostException {
 
-		userRepository.follow(post.getText());
+		userRepository.follow(post.getText(), InetAddress.getLocalHost().getHostAddress());
 		model.addAttribute("message", "User successfully followed");
 
 		Map<String, User> retrievedUsers = userRepository.getAllUsers();

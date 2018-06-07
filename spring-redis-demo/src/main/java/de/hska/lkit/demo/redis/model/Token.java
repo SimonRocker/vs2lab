@@ -6,7 +6,7 @@ public class Token implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String id;
-    private String userId;
+    private String username;
     private String ip;
     private String toDate;
 
@@ -22,12 +22,12 @@ public class Token implements Serializable {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(String userID) {
-        this.userId = userID;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getToDate() {
