@@ -47,6 +47,12 @@
 
         <div class="col-md-6 middle">
 
+            <div class="timeLineSwitchContainer">
+                <!--Buttons zum Switchen -->
+                <div class="timeLineSwitchButton globalTimeline">Global Timeline</div>
+                <div class="timeLineSwitchButton personalTimeline">Personal Timeline</div>
+            </div>
+
             <ul th:each="element : ${posts}">
                 <li>
                     <div class="post">

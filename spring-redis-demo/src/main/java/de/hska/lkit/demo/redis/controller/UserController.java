@@ -66,7 +66,7 @@ public class UserController {
 		Map<String, User> retrievedUsers = userRepository.getAllUsers();
 		model.addAttribute("users", retrievedUsers);
 		model.addAttribute("posts", userRepository.getAllPosts());
-		String[] penis = new String[]{"test1", "test2", "test3"};
+
 		model.addAttribute("followers", userRepository.getFollowedUsersForCurrentUser() );
 
 		return "home";

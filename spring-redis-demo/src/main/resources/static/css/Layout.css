@@ -423,7 +423,37 @@ featherIcon{
 }
 
 .usernameWrapper{
-    width: 100px;
+    width: 100px !important;
     height: 50px;
     float: left;
+}
+
+.timeLineSwitchContainer{
+    height: 50px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.timeLineSwitchButton{
+    height:50px;
+    width: 50%;
+    background-color: #1a75ff;
+    color: white;
+    text-align: center;
+    padding-top: 11px;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.globalTimeline{
+    float: right;
+    border-left: 1px solid white;
+    border-radius: 0 5px 5px 0;
+}
+
+.personalTimeline{
+    float: left;
+    border-right: 1px solid white;
+    border-radius: 5px 0 0 5px;
 }
