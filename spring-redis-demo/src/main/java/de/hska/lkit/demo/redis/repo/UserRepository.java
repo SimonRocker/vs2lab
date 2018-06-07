@@ -82,7 +82,7 @@ public interface UserRepository {
 	 * Write a post on your blog.
 	 *
 	 */
-	public void writePost(Post post);
+	public void writePost(Post post, String ip);
 
 	/**
 	 *
@@ -92,9 +92,9 @@ public interface UserRepository {
 	 */
 	public Map<String, Token> getAllTokens();
 
-	public void follow(String username);
+	public void follow(String username, String ip);
 
 	public Map<String, Follower_Relation> getAllRelations();
 
-	public List<String> getFollowedUsersForCurrentUser();
+	public List<String> getFollowedUsersForCurrentUser(String ip);
 }
