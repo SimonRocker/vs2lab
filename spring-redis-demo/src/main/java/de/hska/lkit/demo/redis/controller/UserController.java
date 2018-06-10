@@ -67,6 +67,7 @@ public class UserController {
 		model.addAttribute("users", retrievedUsers);
 		model.addAttribute("posts", userRepository.getAllPosts());
 		model.addAttribute("followers", userRepository.getFollowedUsersForCurrentUser(InetAddress.getLocalHost().getHostAddress()) );
+		model.addAttribute("personalPosts", userRepository.getListOfPostsFromUsers(userRepository.getFollowedUsersForCurrentUser(InetAddress.getLocalHost().getHostAddress())));
 		return "home";
 	}
 

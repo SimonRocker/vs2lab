@@ -97,4 +97,6 @@ public interface UserRepository {
 	public Map<String, Follower_Relation> getAllRelations();
 
 	public List<String> getFollowedUsersForCurrentUser(String ip);
+
+	public Map<String, Post> getListOfPostsFromUsers(List<String> userList);
 }

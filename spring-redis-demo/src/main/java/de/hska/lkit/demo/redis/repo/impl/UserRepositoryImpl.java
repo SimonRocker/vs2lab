@@ -319,21 +319,23 @@ public class UserRepositoryImpl implements UserRepository {
 	 * @param userList
 	 * @return
 	 */
-	public List<Post> getListOfPostsFromUsers(List<String> userList) {
-		ArrayList<Post> list = new ArrayList<Post>(getAllPosts().values());
+	public Map<String, Post> getListOfPostsFromUsers(List<String> userList) {
+		Map<String, Post> list = new HashMap<>(getAllPosts());
 
 		if (userList == null || userList.isEmpty()) return list;
 
-		ArrayList<Post> resultList = new ArrayList<Post>();
-
-		for (Post post : list) {
-			for (String username : userList) {
-				if (post.getUsername().equals(username)) {
-					resultList.add(post);
+		Map<String, Post> resultList = new HashMap<>();
+		try {
+			for (Map.Entry<String, Post> entry : list.entrySet()) {
+				for (String username : userList) {
+					if (entry.getValue().getUsername().equals(username)) {
+						resultList.put(entry.getKey(), entry.getValue());
+					}
 				}
 			}
+		} catch(Exception e){
+			return new HashMap<String, Post>();
 		}
-
 		return resultList;
 	}
 
@@ -441,15 +443,18 @@ public class UserRepositoryImpl implements UserRepository {
 		String key = KEY_PREFIX_FOLLOWER +  getToken(ip).getUsername();
 
 		List<String> usernamesList;
-
-		// if username is in set for all follower Relations, get his followed users names
-		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS,  getToken(ip).getUsername())) {
-			String[] list = srt_hashOps.get(key, "usernamesFollowed").split(" ");
-			for (String s: list) {
-				System.out.println(s + " Nutzer");
+		try {
+			// if username is in set for all follower Relations, get his followed users names
+			if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS, getToken(ip).getUsername())) {
+				String[] list = srt_hashOps.get(key, "usernamesFollowed").split(" ");
+				for (String s : list) {
+					System.out.println(s + " Nutzer");
+				}
+				return Arrays.asList(list);
+			} else {
+				return null;
 			}
-			return Arrays.asList(list);
-		} else {
+		} catch (Exception e) {
 			return null;
 		}
 	}

@@ -457,3 +457,11 @@ featherIcon{
     border-right: 1px solid white;
     border-radius: 5px 0 0 5px;
 }
+
+.globalTimelineDiv{
+    display: block;
+}
+
+.personalTimelineDiv{
+    display: none;
+}
