@@ -328,13 +328,18 @@ public class UserRepositoryImpl implements UserRepository {
 		try {
 			for (Map.Entry<String, Post> entry : list.entrySet()) {
 				for (String username : userList) {
+					System.out.println(username + " gleich " + entry.getValue().getUsername() + " ?" );
+					System.out.println(entry.getValue());
 					if (entry.getValue().getUsername().equals(username)) {
 						resultList.put(entry.getKey(), entry.getValue());
 					}
 				}
 			}
 		} catch(Exception e){
-			return new HashMap<String, Post>();
+			System.out.println("Exception: " + e.getMessage());
+			if(resultList.isEmpty())
+				return new HashMap<String, Post>();
+			else return resultList;
 		}
 		return resultList;
 	}
