@@ -334,7 +334,9 @@ public class UserRepositoryImpl implements UserRepository {
 				}
 			}
 		} catch(Exception e){
-			return new HashMap<String, Post>();
+			if(resultList.isEmpty())
+				return new HashMap<String, Post>();
+			else return resultList;
 		}
 		return resultList;
 	}
