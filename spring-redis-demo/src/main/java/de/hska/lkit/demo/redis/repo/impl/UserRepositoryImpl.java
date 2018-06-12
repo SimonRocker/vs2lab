@@ -262,7 +262,7 @@ public class UserRepositoryImpl implements UserRepository {
 		User user = getUser(username);
 		if (user == null) return false;
 		if (user.getPassword().equals(password)) {
-			addToken(ip, user.getId());
+			addToken(ip, user.getUsername());
 			return true;
 		} else {return false;}
 	}
