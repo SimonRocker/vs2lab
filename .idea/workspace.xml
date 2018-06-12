@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d93268cf-3225-42d3-87b9-e08066182e20" name="Default" comment="">
+    <list default="true" id="d93268cf-3225-42d3-87b9-e08066182e20" name="Default" comment="Typo berichtigt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-redis-demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1666">
-              <caret line="100" column="76" selection-start-line="100" selection-start-column="76" selection-end-line="100" selection-end-column="76" />
+              <caret line="100" column="66" selection-start-line="100" selection-start-column="66" selection-end-line="100" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -67,20 +62,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+            <state relative-caret-position="136">
+              <caret line="23" column="57" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/Script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -97,8 +92,8 @@
       <file leaf-file-name="UserRepositoryImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5355">
-              <caret line="336" column="47" selection-start-line="336" selection-start-column="47" selection-end-line="336" selection-end-column="47" />
+            <state relative-caret-position="177">
+              <caret line="460" column="39" selection-start-line="460" selection-start-column="39" selection-end-line="460" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -118,6 +113,7 @@
       <find>newpostbu</find>
       <find>300</find>
       <find>posts</find>
+      <find>left</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,11 +132,11 @@
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Script.js" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/Script.js" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" />
       </list>
     </option>
   </component>
@@ -149,6 +145,13 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -161,17 +164,6 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-          <item name="spring-boot" type="36feed69:MavenProjectsStructure$PluginNode" />
         </path>
       </expand>
       <select />
@@ -191,6 +183,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -324,20 +318,19 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-redis-demo/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -384,6 +377,10 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
+    </configuration>
+    <configuration name="BootRedisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="de.hska.lkit.demo.redis.BootRedisApplication" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -433,11 +430,20 @@
       <workItem from="1528386745661" duration="6048000" />
       <workItem from="1528663390100" duration="1064000" />
       <workItem from="1528665814667" duration="37000" />
+      <workItem from="1528828753482" duration="2167000" />
     </task>
+    <task id="LOCAL-00001" summary="Typo berichtigt">
+      <created>1528831579630</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528831579630</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77300000" />
+    <option name="totallyTimeSpent" value="79467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -445,7 +451,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info active="true" anchor="right" id="Maven Projects" order="9" visible="true" weight="0.16666667" />
+      <window_info anchor="right" id="Maven Projects" order="9" visible="true" weight="0.16666667" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="2" />
@@ -455,12 +461,13 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32943678" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16896918" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21253985" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -481,6 +488,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Typo berichtigt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Typo berichtigt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -808,7 +819,7 @@
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1666">
-          <caret line="100" column="76" selection-start-line="100" selection-start-column="76" selection-end-line="100" selection-end-column="76" />
+          <caret line="100" column="66" selection-start-line="100" selection-start-column="66" selection-end-line="100" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -822,21 +833,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5355">
-          <caret line="336" column="47" selection-start-line="336" selection-start-column="47" selection-end-line="336" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/js/Script.js" />
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7905">
@@ -846,8 +843,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/Script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="460" column="39" selection-start-line="460" selection-start-column="39" selection-end-line="460" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="57" />
         </state>
       </provider>
     </entry>
