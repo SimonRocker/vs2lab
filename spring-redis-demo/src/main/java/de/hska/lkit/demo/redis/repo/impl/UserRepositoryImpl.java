@@ -439,6 +439,46 @@ public class UserRepositoryImpl implements UserRepository {
 		return rt_hashOps_follower_relation.entries(KEY_HASH_ALL_FOLLOWERS);
 	}
 
+	public void stopFollowing(String username, String ip) {
+		System.out.println(username + " ist der Nutzer");
+		String key = KEY_PREFIX_FOLLOWER + getToken(ip).getUsername();
+
+		ArrayList<String> usernamesList;
+
+		// if username is in set for all usernames,
+		if (srt_setOps.isMember(KEY_SET_ALL_FOLLOWERS,  getToken(ip).getUsername())) {
+			String[] list = srt_hashOps.get(key, "usernamesFollowed").split(" ");
+			usernamesList = new ArrayList<String>(Arrays.asList(list));
+		} else {
+			usernamesList = new ArrayList<String>();
+		}
+
+		if(!usernamesList.contains(username)) {
+			return;
+		}
+
+		String value = "";
+		for (String s: usernamesList) {
+			if!(username == s)
+				value += s + " ";
+		}
+
+		if (value != null && value.length() > 0 && String.valueOf(value.charAt(value.length() - 1)) == " ") {
+			value = value.substring(0, value.length() - 1);
+		}
+
+		srt_hashOps.put(key, "usernamesFollowed", value);
+
+		// the key for a new user is added to the set for all usernames
+		srt_setOps.add(KEY_SET_ALL_FOLLOWERS,  getToken(ip).getUsername());
+
+
+		Follower_Relation relation = new Follower_Relation();
+		relation.setUsernameFollower( getToken(ip).getUsername());
+		relation.setUsernamesFollowed(usernamesList);
+		rt_hashOps_follower_relation.put(KEY_HASH_ALL_FOLLOWERS, key, relation);
+	}
+
 	@Override
 	public List<String> getFollowedUsersForCurrentUser(String ip) {
 		System.out.println("getting users...");

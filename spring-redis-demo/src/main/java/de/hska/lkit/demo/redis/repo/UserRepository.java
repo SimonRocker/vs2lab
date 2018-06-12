@@ -94,6 +94,8 @@ public interface UserRepository {
 
 	public void follow(String username, String ip);
 
+	public void stopFollowing(String username, String ip);
+
 	public Map<String, Follower_Relation> getAllRelations();
 
 	public List<String> getFollowedUsersForCurrentUser(String ip);
