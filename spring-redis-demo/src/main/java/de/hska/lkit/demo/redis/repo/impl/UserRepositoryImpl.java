@@ -262,7 +262,7 @@ public class UserRepositoryImpl implements UserRepository {
 		User user = getUser(username);
 		if (user == null) return false;
 		if (user.getPassword().equals(password)) {
-			addToken(ip, user.getId());
+			addToken(ip, user.getUsername());
 			return true;
 		} else {return false;}
 	}
@@ -325,19 +325,18 @@ public class UserRepositoryImpl implements UserRepository {
 		if (userList == null || userList.isEmpty()) return list;
 
 		Map<String, Post> resultList = new HashMap<>();
-		try {
 			for (Map.Entry<String, Post> entry : list.entrySet()) {
 				for (String username : userList) {
-					if (entry.getValue().getUsername().equals(username)) {
-						resultList.put(entry.getKey(), entry.getValue());
+					//Only needed if you got some wrong (old) posts in there
+					try {
+						if (entry.getValue().getUsername().equals(username)) {
+							resultList.put(entry.getKey(), entry.getValue());
+						}
+					}catch (Exception e) {
+						//Just do nothing and go on, there might be more posts to get ;) 
 					}
 				}
 			}
-		} catch(Exception e){
-			if(resultList.isEmpty())
-				return new HashMap<String, Post>();
-			else return resultList;
-		}
 		return resultList;
 	}
 
