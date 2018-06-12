@@ -459,7 +459,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 		String value = "";
 		for (String s: usernamesList) {
-			if!(username == s)
+			if(!(username == s))
 				value += s + " ";
 		}
 
