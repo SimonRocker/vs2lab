@@ -6,11 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head -->
+
     <link th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
           rel="stylesheet" media="screen" />
     <link href="../static/css/Layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="webjars/sockjs-client/dist/sockjs.js"></script>
+    <!--
+    <script src="webjars/sockjs-client/dist/sockjs.min.js"></script>
+    -->
+    <script src="webjars/stomp-websocket/2.3.3/stomp.js"></script>
+    <!--
+    <script src="webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
+    -->
+    <script src="static/js/helloCli.js" th:src="@{/js/helloCli.js}"></script>
+
 </head>
-<body>
+<body onload="connect();">
 
 <div class="outer">
     <div class="top">
@@ -24,13 +37,27 @@
 
         <div class="col-md-6 middle">
             <h1>add new post</h1>
-
+                <!--
+                <div>
+                    <button id="connect" onclick="connect();">Connect</button>
+                    <button id="disconnect" onclick="disconnect();">Disonnect</button>
+                </div>
+                -->
+                <div id="conversationDiv">
+                    <!-- <label>What is your name?</label><input type="text" id="name" />
+                    <button id="sendName" onclick="sendName();" type="submit" class="btn btn-default">Save</button>-->
+                    <p id="response"></p>
+                </div>
             <form class="form" id="newPostForm" action="#" th:action="@{/addPost}"
                   th:object="${post}" method="post">
                 <div class="form-group">
-                    <label></label> <input class="postTextField" type="text" th:field="*{text}" />
+                    <label></label> <input id="newPostText" class="postTextField" type="text" th:field="*{text}" />
                 </div>
-                <button type="submit" class="btn btn-default">Save</button>
+                <p>
+                    <button id="submitNewPost" onclick="sendNewPost();" type="submit" class="btn btn-default" th:name="${username}" th:value="${date}">
+                        Publish
+                    </button>
+                </p>
             </form>
         </div>
         <div class="col-md-3 side right">

@@ -11,8 +11,17 @@
     <link href="../static/css/Layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="static/js/Script.js" th:src="@{/js/Script.js}"></script>
+    <script src="webjars/sockjs-client/dist/sockjs.js"></script>
+    <!--
+    <script src="webjars/sockjs-client/dist/sockjs.min.js"></script>
+    -->
+    <script src="webjars/stomp-websocket/2.3.3/stomp.js"></script>
+    <!--
+    <script src="webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
+    -->
+    <script src="static/js/helloCli.js" th:src="@{/js/helloCli.js}"></script>
 </head>
-<body>
+<body onload="connect();">
 
 <div class="outer">
     <div class="top">
@@ -49,13 +58,15 @@
 
         <div class="col-md-6 middle">
 
+            <div id="pushMessage"></div>
+
             <div class="timeLineSwitchContainer">
                 <!--Buttons zum Switchen -->
                 <div class="timeLineSwitchButton globalTimeline">Global Timeline</div>
                 <div class="timeLineSwitchButton personalTimeline">Personal Timeline</div>
             </div>
 
-            <div class="globalTimelineDiv">
+            <div class="globalTimelineDiv" id="globalTimeline">
                 <ul th:each="element : ${posts}">
                     <li>
                         <div class="post">
@@ -72,7 +83,7 @@
                 </ul>
             </div>
 
-            <div class="personalTimelineDiv">
+            <div class="personalTimelineDiv" id="personalTimeLine">
                 <ul th:each="element : ${personalPosts}">
                     <li>
                         <div class="post">
@@ -91,7 +102,7 @@
 
 
         </div>
-        <div class="col-md-3 side right">
+        <div id="followingRight" class="col-md-3 side right">
             <h3>You´re following:</h3>
             <ul class="followingList" th:each="element : ${followers}">
 

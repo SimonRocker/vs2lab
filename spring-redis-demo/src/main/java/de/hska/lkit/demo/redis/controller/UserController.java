@@ -6,6 +6,7 @@ import java.util.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import de.hska.lkit.demo.redis.repo.impl.UserRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -149,10 +150,15 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/addPost", method = RequestMethod.GET)
-	public String addPost(@ModelAttribute Greeting greeting, @ModelAttribute Post post) throws UnknownHostException{
+	public String addPost(@ModelAttribute Greeting greeting, @ModelAttribute Post post, Model model) throws UnknownHostException{
 		boolean logInSuccess = userRepository.checkIfUserIsLoggedIn(InetAddress.getLocalHost().getHostAddress());
 		if(!logInSuccess)
 			return "logInUser";
+
+		Token token = ((UserRepositoryImpl) userRepository).getToken(InetAddress.getLocalHost().getHostAddress());
+
+        model.addAttribute("username", token.getUsername());
+        model.addAttribute("date", token.getToDate());
 		return "newPost";
 	}
 
