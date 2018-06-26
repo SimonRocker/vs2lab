@@ -16,7 +16,7 @@ function connect() {
         });
         stompClient.subscribe('/topic/newPost', function (greeting) {
             // zweiter Subscriber
-            var greetingContent = JSON.parse(greeting.body).content;
+            var greetingContent = JSON.parse(greeting.body).name;
             var newPostData = JSON.parse(greetingContent);
             showNewPostInTimeline(newPostData.newPostText, newPostData.currentUsername, newPostData.date);
         });
@@ -37,7 +37,6 @@ function sendNewPost() {
     var date = document.getElementById('submitNewPost').value
 
 
-    debugger;
 
     stompClient.send("/app/newPost", {}, JSON.stringify({
         /* es muss 'name' da stehen*/
@@ -51,7 +50,6 @@ function sendNewPost() {
 }
 
 function showNewPostInTimeline(message, user, date) {
-    debugger;
 
     var addToTimeline = "<ul th:each=\"element : ${posts}\">\n" +
         "                    <li>\n" +

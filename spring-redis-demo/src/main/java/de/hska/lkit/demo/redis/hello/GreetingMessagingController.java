@@ -1,6 +1,10 @@
 package de.hska.lkit.demo.redis.hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.listener.PatternTopic;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
+import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -13,6 +17,12 @@ public class GreetingMessagingController {
 
     @Autowired
     private SimpMessagingTemplate msgTemplate;
+    @Autowired
+    private RedisMessageListenerContainer container;
+    @Autowired
+    private StringRedisTemplate template;
+    @Autowired
+    private MessageListenerAdapter listenerAdapter;
 
     @MessageMapping("/app/hello")
     public void greeting(HelloMessage message) throws Exception {
@@ -22,13 +32,14 @@ public class GreetingMessagingController {
     }
 
     @MessageMapping("/app/newPost")
-    public void newPostIsComing(HelloMessage message) throws Exception {
+    public void newPostIsComing(String message) throws Exception {
+
 
         /*
         global und personal timeline soll nun benachrichtig werden dass es neuen post gibt
          */
         // Post an stomp in helloCli.js
-        msgTemplate.convertAndSend("/topic/newPost", new Greeting(message.getName()));
+        template.convertAndSend("post", message);
     }
 
 }

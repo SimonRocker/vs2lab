@@ -1,13 +1,24 @@
 package de.hska.lkit.demo.redis.controller;
 
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.concurrent.CountDownLatch;
 
+import de.hska.lkit.demo.redis.Receiver;
 import de.hska.lkit.demo.redis.repo.impl.UserRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.listener.PatternTopic;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
+import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,6 +43,16 @@ public class UserController {
 		super();
 		this.userRepository = userRepository;
 	}
+
+	// Redis Things
+    @Autowired
+    RedisMessageListenerContainer container;
+	@Autowired
+	StringRedisTemplate template;
+	@Autowired
+    MessageListenerAdapter listenerAdapter;
+
+
 
 	/**
 	 * list all users
@@ -156,9 +177,11 @@ public class UserController {
 			return "logInUser";
 
 		Token token = ((UserRepositoryImpl) userRepository).getToken(InetAddress.getLocalHost().getHostAddress());
+		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
+		String formattedString = LocalDate.now().format(formatter);
 
         model.addAttribute("username", token.getUsername());
-        model.addAttribute("date", token.getToDate());
+        model.addAttribute("date", formattedString);
 		return "newPost";
 	}
 
@@ -206,6 +229,15 @@ public class UserController {
 
 		model.addAttribute("users", userRepository.getAllUsers());
 		model.addAttribute("posts", retrievedPost);
+
+		/*
+		Redis Pub/Sub Messaging
+		 */
+        String message = post.getText();
+        template.convertAndSend("newPostIsComingMethod", message);
+
+
+
 		return "users";
 	}
 	
@@ -226,10 +258,6 @@ public class UserController {
 		Map<String, User> retrievedUsers = userRepository.findUsersWith(pattern);
 		model.addAttribute("users", retrievedUsers);
 		return "users";
-	}
-
-	public void follow(String username) throws UnknownHostException{
-		userRepository.follow(username, InetAddress.getLocalHost().getHostAddress());
 	}
 
 	@RequestMapping(value = "/users", method = RequestMethod.POST)

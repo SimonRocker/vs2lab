@@ -54,7 +54,7 @@
                     <label></label> <input id="newPostText" class="postTextField" type="text" th:field="*{text}" />
                 </div>
                 <p>
-                    <button id="submitNewPost" onclick="sendNewPost();" type="submit" class="btn btn-default" th:name="${username}" th:value="${date}">
+                    <button id="submitNewPost" onclick="sendNewPost()" type="submit" class="btn btn-default" th:name="${username}" th:value="${date}">
                         Publish
                     </button>
                 </p>

@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.listener.PatternTopic;
@@ -16,17 +17,16 @@ import java.util.concurrent.CountDownLatch;
 public class BootRedisApplication {
 
 	@Bean
-	RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,
-											MessageListenerAdapter listenerAdapter) {
+	RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory, MessageListenerAdapter listenerAdapter) {
 		RedisMessageListenerContainer container = new RedisMessageListenerContainer();
 		container.setConnectionFactory(connectionFactory);
-		container.addMessageListener(listenerAdapter, new PatternTopic("chat"));
+		container.addMessageListener(listenerAdapter, new PatternTopic("post"));
 		return container;
 	}
 
 	@Bean
 	MessageListenerAdapter listenerAdapter(Receiver receiver) {
-		return new MessageListenerAdapter(receiver, "receiveMessage");
+		return new MessageListenerAdapter(receiver, "receivePost");
 	}
 
 	@Bean
@@ -39,16 +39,18 @@ public class BootRedisApplication {
 		return new CountDownLatch(1);
 	}
 
+	@Bean
+    @Primary
+	StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
+		return new StringRedisTemplate(connectionFactory);
+	}
+
 	public static void main(String[] args) throws InterruptedException {
-
 		ApplicationContext ctx = SpringApplication.run(BootRedisApplication.class, args);
-
 		StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
 		CountDownLatch latch = ctx.getBean(CountDownLatch.class);
-		template.convertAndSend("chaSt", "Hello from Redis!");
+		template.convertAndSend("chat", "Hello from Redis!");
 		latch.await();
-		System.exit(0);
-
 	}
 
 

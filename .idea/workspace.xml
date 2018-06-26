@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" line="68" mnemonic="1" />
-    <bookmark url="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCli.js" line="52" mnemonic="2" />
-    <bookmark url="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" line="61" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCli.js" line="51" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" line="82" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" line="219" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d93268cf-3225-42d3-87b9-e08066182e20" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__avalon_framework_avalon_framework_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_projectodd_sockjs_sockjs_servlet_0_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_springframework_spring_messaging_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_springframework_spring_websocket_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_webjars_bowergithub_sockjs_sockjs_client_1_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_webjars_stomp_websocket_2_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/Receiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/Greeting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/GreetingMessagingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/HelloMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vs2lab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vs2lab.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/BootRedisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/BootRedisApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/Receiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/configuration/RedisConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/configuration/RedisConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/GreetingMessagingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/GreetingMessagingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCli.js" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCli.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-redis-demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,14 +27,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5864577">
+    <splitter split-orientation="horizontal" split-proportion="0.4441013">
       <split-first>
-        <leaf>
-          <file leaf-file-name="Script.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/Script.js">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="newPost.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="26" />
+                <state relative-caret-position="790">
+                  <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
                 </state>
               </provider>
             </entry>
@@ -52,23 +42,41 @@
           <file leaf-file-name="helloCli.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCli.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="263">
-                  <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+                <state relative-caret-position="-204">
+                  <caret line="42" column="13" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BootRedisApplication.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/BootRedisApplication.java">
+          <file leaf-file-name="Receiver.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/Receiver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+                <state relative-caret-position="345">
+                  <caret line="33" selection-start-line="33" selection-end-line="33" />
                   <folding>
-                    <element signature="e#1283#1284#0" expanded="true" />
-                    <element signature="e#1316#1317#0" expanded="true" />
-                    <element signature="e#1350#1351#0" expanded="true" />
-                    <element signature="e#1385#1386#0" expanded="true" />
+                    <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="RedisConfiguration.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/configuration/RedisConfiguration.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-117">
+                  <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="WebSocketConfig.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/WebSocketConfig.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -77,29 +85,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="newPost.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html">
+          <file leaf-file-name="BootRedisApplication.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/BootRedisApplication.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="326">
-                  <caret line="56" column="142" selection-start-line="56" selection-start-column="142" selection-end-line="56" selection-end-column="142" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="160" selection-start-line="160" selection-end-line="160" />
+                <state relative-caret-position="-134">
+                  <caret line="22" column="76" selection-start-line="22" selection-start-column="72" selection-end-line="22" selection-end-column="76" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -107,11 +97,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="UserRepositoryImpl.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java">
+          <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1919">
-                  <caret line="216" column="27" selection-start-line="216" selection-start-column="23" selection-end-line="216" selection-end-column="27" />
+                <state relative-caret-position="2907">
+                  <caret line="236" column="46" selection-start-line="236" selection-start-column="46" selection-end-line="236" selection-end-column="46" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -122,11 +112,20 @@
           <file leaf-file-name="GreetingMessagingController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/GreetingMessagingController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="359">
-                  <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+                <state relative-caret-position="102">
+                  <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Greeting.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/Greeting.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -160,6 +159,18 @@
       <find>main</find>
       <find>debugger</find>
       <find>date</find>
+      <find>wr</find>
+      <find>addp</find>
+      <find>addToken</find>
+      <find>check</find>
+      <find>stringredist</find>
+      <find>follow</find>
+      <find>stringRedisTemplate</find>
+      <find>validator</find>
+      <find>/addp</find>
+      <find>addPost</find>
+      <find>spring</find>
+      <find>context</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,12 +184,10 @@
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/GreetingController.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newUser.html" />
-        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Script.js" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/Script.js" />
-        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/HelloMessage.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/logInUser.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/hello-client.js" />
@@ -195,12 +204,18 @@
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/GreetingController.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/WebSocketConfig.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCliHome.js" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/configuration/RedisConfiguration.java" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/cont.java" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/container.java" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/testingStuff.java" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/BootRedisApplication.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/Receiver.java" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/GreetingMessagingController.java" />
-        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html" />
-        <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html" />
         <option value="$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCli.js" />
       </list>
     </option>
@@ -238,16 +253,17 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="34" />
-    <option name="y" value="4" />
-    <option name="width" value="1803" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -310,6 +326,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="redis" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vs2lab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vs2lab" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-redis-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="hello" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vs2lab" type="b2602c69:ProjectViewProjectNode" />
@@ -392,13 +418,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -407,16 +433,16 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/gecko/Desktop/vs2lab/spring-redis-demo/src/main/resources/static/js/Script.js" />
+    <property name="SearchEverywhereHistoryKey" value="greet&#9;FILE&#9;file://C:/Users/gecko/Desktop/vs2lab/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/Greeting.java&#10;post.htm&#9;FILE&#9;file://C:/Users/gecko/Desktop/vs2lab/spring-redis-demo/src/main/resources/templates/newPost.html&#10;greeting&#9;FILE&#9;file://C:/Users/gecko/Desktop/vs2lab/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/GreetingMessagingController.java&#10;contr&#9;FILE&#9;file://C:/Users/gecko/Desktop/vs2lab/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.38505748" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -433,6 +459,11 @@
     </key>
   </component>
   <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
     <option name="ruleStates">
       <list>
         <RuleState>
@@ -443,8 +474,9 @@
         </RuleState>
       </list>
     </option>
+    <option name="contentProportion" value="0.17157975" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.Unnamed">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -468,6 +500,12 @@
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="de.hska.lkit.demo.redis.BootRedisApplication" />
     </configuration>
+    <configuration name="Unnamed" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="de.hska.lkit.demo.redis.BootRedisApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=8081" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -490,6 +528,10 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.BootRedisApplication" />
+      <item itemvalue="Spring Boot.Unnamed" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -518,7 +560,9 @@
       <workItem from="1528665814667" duration="37000" />
       <workItem from="1528828753482" duration="5544000" />
       <workItem from="1529167231617" duration="56519000" />
-      <workItem from="1529407999371" duration="70635000" />
+      <workItem from="1529407999371" duration="72063000" />
+      <workItem from="1529563612130" duration="15190000" />
+      <workItem from="1529863604546" duration="50206000" />
     </task>
     <task id="LOCAL-00001" summary="Typo berichtigt">
       <created>1528831579630</created>
@@ -534,11 +578,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528831944066</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fuck my Life&#10;&#10;Schwanzkopfpenisgesicht">
+      <created>1529544177434</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1529544177435</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209998000" />
+    <option name="totallyTimeSpent" value="276822000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,6 +602,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -569,11 +621,12 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.25611052" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.17853348" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.41339" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32893497" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6090909" visible="true" weight="0.096875" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.3295711" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32844242" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6090909" visible="true" weight="0.15677084" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32893497" />
@@ -588,7 +641,7 @@
     <layout-to-restore>
       <window_info id="Designer" order="1" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4137606" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41339" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -600,24 +653,25 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32893497" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.22848034" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32987747" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6090909" visible="true" weight="0.15677084" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32987747" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.17853348" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.33368093" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6090909" visible="true" weight="0.0796875" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32893497" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Structure" order="10" sideWeight="0.3909091" side_tool="true" weight="0.14479166" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.32422245" />
+      <window_info anchor="right" id="Structure" order="10" sideWeight="0.3909091" side_tool="true" weight="0.1953125" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.34643996" />
       <window_info anchor="right" id="Bean Validation" order="8" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.35600424" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,255 +708,75 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Typo berichtigt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Typo berichtigt" />
+    <MESSAGE value="Fuck my Life&#10;&#10;Schwanzkopfpenisgesicht" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fuck my Life&#10;&#10;Schwanzkopfpenisgesicht" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/Receiver.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="23" />
+      <option name="time" value="38" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>token.getToDate()</expression-string>
+        <expression-string>message</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>token</expression-string>
+        <expression-string>msgTemplate</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getLocalHost()</expression-string>
+        <expression-string>template</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>CharSequence</expression-string>
+        <expression-string>post.getText()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>length</expression-string>
+        <expression-string>post</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>message.getName().trim(&quot;}&quot;)</expression-string>
+        <expression-string>retrievedPost</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>message.getName().trim()</expression-string>
+        <expression-string>model</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>message.getName().trim</expression-string>
+        <expression-string>container</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>message.getName().split</expression-string>
+        <expression-string>args</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/hello-client.js" />
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/logInUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/4.3.3.RELEASE/spring-websocket-4.3.3.RELEASE.jar!/org/springframework/web/socket/config/annotation/DelegatingWebSocketMessageBrokerConfiguration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/spring-websocket-4.3.3.RELEASE-sources.jar!/org/springframework/web/socket/config/annotation/DelegatingWebSocketMessageBrokerConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-467">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/model/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/configuration/RedisConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/GreetingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/spring-websocket-4.3.3.RELEASE-sources.jar!/org/springframework/web/socket/config/annotation/WebSocketMessageBrokerConfigurer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/WebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-messaging/4.3.3.RELEASE/spring-messaging-4.3.3.RELEASE.jar!/org/springframework/messaging/handler/invocation/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/HelloMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/Greeting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/Receiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="81" lean-forward="true" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#339#340#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/BootRedisApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="e#1283#1284#0" expanded="true" />
-            <element signature="e#1316#1317#0" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1385#1386#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCliHome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.3.RELEASE/spring-web-4.3.3.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.3.RELEASE/spring-webmvc-4.3.3.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.3.RELEASE/spring-webmvc-4.3.3.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="749" selection-start-line="749" selection-end-line="749" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.3.RELEASE/spring-webmvc-4.3.3.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.3.RELEASE/spring-webmvc-4.3.3.RELEASE-sources.jar!/org/springframework/web/servlet/DispatcherServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="906" selection-start-line="906" selection-end-line="906" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.3.RELEASE/spring-webmvc-4.3.3.RELEASE-sources.jar!/org/springframework/web/servlet/FrameworkServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="847" selection-start-line="847" selection-end-line="847" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/8.5.5/tomcat-embed-websocket-8.5.5-sources.jar!/org/apache/tomcat/websocket/server/WsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.3.RELEASE/spring-web-4.3.3.RELEASE-sources.jar!/org/springframework/web/filter/RequestContextFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.3.RELEASE/spring-web-4.3.3.RELEASE-sources.jar!/org/springframework/web/filter/HttpPutFormContentFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.3.RELEASE/spring-web-4.3.3.RELEASE-sources.jar!/org/springframework/web/filter/HiddenHttpMethodFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -1022,17 +896,234 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/helloWebSocket.html" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/concurrent/CountDownLatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="298" column="32" lean-forward="true" selection-start-line="298" selection-start-column="32" selection-end-line="298" selection-end-column="32" />
+          <folding>
+            <element signature="e#9899#9900#0" expanded="true" />
+            <element signature="e#9936#9937#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/Script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/oneUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/css/Layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="430" column="25" selection-start-line="430" selection-start-column="24" selection-end-line="430" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        <state relative-caret-position="311">
+          <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="113" selection-start-line="42" selection-start-column="113" selection-end-line="42" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/repo/impl/UserRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1919">
-          <caret line="216" column="27" selection-start-line="216" selection-start-column="23" selection-end-line="216" selection-end-column="27" />
+        <state relative-caret-position="1904">
+          <caret line="131" column="92" selection-start-line="131" selection-start-column="92" selection-end-line="131" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.7.3.RELEASE/spring-data-redis-1.7.3.RELEASE-sources.jar!/org/springframework/data/redis/core/RedisAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#1812#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1573#1574#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/1.4.1.RELEASE/spring-boot-autoconfigure-1.4.1.RELEASE.jar!/org/springframework/boot/autoconfigure/data/redis/RedisAutoConfiguration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="58" column="78" selection-start-line="58" selection-start-column="78" selection-end-line="58" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/1.4.1.RELEASE/spring-boot-autoconfigure-1.4.1.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/data/redis/RedisAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="86" column="38" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.3.RELEASE/spring-beans-4.3.3.RELEASE-sources.jar!/org/springframework/beans/factory/support/DefaultListableBeanFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="1030" selection-start-line="1030" selection-end-line="1030" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.7.3.RELEASE/spring-data-redis-1.7.3.RELEASE-sources.jar!/org/springframework/data/redis/connection/RedisConnectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.3.RELEASE/spring-context-4.3.3.RELEASE-sources.jar!/org/springframework/context/ApplicationContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-530">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/1.4.1.RELEASE/spring-boot-autoconfigure-1.4.1.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.4.1.RELEASE/spring-boot-1.4.1.RELEASE-sources.jar!/org/springframework/boot/SpringApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-588">
+          <caret line="1182" column="47" selection-start-line="1182" selection-start-column="45" selection-end-line="1182" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/cont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-122">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.7.3.RELEASE/spring-data-redis-1.7.3.RELEASE-sources.jar!/org/springframework/data/redis/core/RedisTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="677" column="16" selection-start-line="677" selection-start-column="16" selection-end-line="677" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/GreetingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-messaging/4.3.3.RELEASE/spring-messaging-4.3.3.RELEASE.jar!/org/springframework/messaging/simp/config/AbstractMessageBrokerConfiguration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="262" column="33" selection-start-line="262" selection-start-column="33" selection-end-line="262" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/testingStuff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="9" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.7.3.RELEASE/spring-data-redis-1.7.3.RELEASE-sources.jar!/org/springframework/data/redis/core/StringRedisTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="790">
+          <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/Greeting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/configuration/RedisConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/BootRedisApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="22" column="76" selection-start-line="22" selection-start-column="72" selection-end-line="22" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/Receiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1041,56 +1132,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/hello/GreetingMessagingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        <state relative-caret-position="102">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/Script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/java/de/hska/lkit/demo/redis/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="160" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="2907">
+          <caret line="236" column="46" selection-start-line="236" selection-start-column="46" selection-end-line="236" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/newPost.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="56" column="142" selection-start-line="56" selection-start-column="142" selection-end-line="56" selection-end-column="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/templates/helloWebSocket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-redis-demo/src/main/resources/static/js/helloCli.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="-204">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1103,7 +1166,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.38505748" />
               </list>
             </option>
           </splitter-proportions>
@@ -1111,11 +1174,11 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring</last-edited>
+          <last-edited>Web (demo)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.38505748" />
               </list>
             </option>
           </splitter-proportions>
@@ -1123,11 +1186,11 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>com.chiradip.rediscl:redisclient_2.10:0.8</last-edited>
+          <last-edited>org.springframework:spring-orm:2.5</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.38505748" />
               </list>
             </option>
           </splitter-proportions>
@@ -1139,7 +1202,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.38505748" />
               </list>
             </option>
           </splitter-proportions>
@@ -1147,11 +1210,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>vs2lab</last-edited>
+          <last-edited>Spring|demo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.38505748" />
               </list>
             </option>
           </splitter-proportions>

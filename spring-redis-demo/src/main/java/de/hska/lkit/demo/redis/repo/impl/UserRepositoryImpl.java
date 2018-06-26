@@ -405,6 +405,9 @@ public class UserRepositoryImpl implements UserRepository {
 
 		if(!usernamesList.contains(username)) {
 			usernamesList.add(username);
+		} else {
+			stopFollowing(username, ip);
+			return;
 		}
 
 		String value = "";
@@ -412,7 +415,7 @@ public class UserRepositoryImpl implements UserRepository {
 			value += s + " ";
 		}
 
-		if (value != null && value.length() > 0 && String.valueOf(value.charAt(value.length() - 1)) == " ") {
+		if (value.length() > 0 && String.valueOf(value.charAt(value.length() - 1)) == " ") {
 			value = value.substring(0, value.length() - 1);
 		}
 
@@ -458,11 +461,11 @@ public class UserRepositoryImpl implements UserRepository {
 
 		String value = "";
 		for (String s: usernamesList) {
-			if(!(username == s))
+			if(!username.equals(s))
 				value += s + " ";
 		}
 
-		if (value != null && value.length() > 0 && String.valueOf(value.charAt(value.length() - 1)) == " ") {
+		if (value.length() > 0 && String.valueOf(value.charAt(value.length() - 1)) == " ") {
 			value = value.substring(0, value.length() - 1);
 		}
 
